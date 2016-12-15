@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/* ========================================================
+    IE 7 +
+   ======================================================== */
+
+
+/* ============ 边距 ======================
+            统一默认边距
+*/
+body, dl, dd, ul, ol, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, optgroup,
+p, blockquote, figure, hr, menu, dir,
+thead, tbody, tfoot, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+/* =========== 链接 ========================
+   1. 去除默认链接下划线，增加其可读性
+   2. 去除悬浮状态下划线，增加其可读性
+   3. 解决IE 10 点击链接时的灰色背景 (统一默认透明)
+   4. 去掉(点击、悬浮)时的焦点框。
+   5. 统一聚焦样式。(键盘Tag键 焦点框)
+*/
+a {
+	text-decoration: none;
+}
+
+a:hover {
+  outline: 0 none;
+  text-decoration: none;
+}
+
+a:active {
+  outline: 0 none;
+  background-color: transparent;
+}
+
+a:focus {
+  outline: 1px dotted;
+}
