@@ -1,8 +1,81 @@
 @charset "UTF-8";
-
 /* ========================================================
-    IE 7 +
+    Browser support :
+    1.IE 7 +
    ======================================================== */
+
+
+/* ============ 盒模型 =====================
+            修复有缺陷的盒模型
+via: http://paulirish.com/2012/box-sizing-border-box-ftw/
+*/
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* =========== 元素 ===================
+      1. 设置全局字体,中文字体优先。
+      2. 防止IOS 横屏字体放大，同时保证PC端 zoom 功能正常
+         [ 竖屏状态下是14px，转换为横屏时就变成了20px, text-size-adjust:100% 后统一字体大小]
+*/
+html {
+  /*font-family: 'HanHei SC', 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'Arial', sans-serif;*/
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+
+/* HTML5 display definitions
+   ==========================================================================
+    当低版本浏览器遇到不识别的元素时，会默认把他们当成内联元素(inline),重新定义html5 部分元素
+    */
+/**
+ * 修复 IE 8/9，HTML5新元素不能正确显示的问题，定义为block的元素
+ * 修复 IE 10/11，details 和 summary 定义为 block 的元素
+ * 修复 IE 11，main定义为 block 的元素
+ * hgroup has been removed from the HTML5 (W3C) specification
+ *        https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hgroup
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+1.修复 IE 8/9，HTML5新元素不能正确显示的问题，定义为inline-block元素
+2.修复Chrome, Firefox, 和Opera的progress元素没有以baseline垂直对齐
+*/
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
+对不支持controls属性的浏览器，audio元素给以隐藏
+移除iOS5设备中多余的高度
+*/
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
 
 
 /* ============ 边距 ======================
@@ -23,7 +96,7 @@ thead, tbody, tfoot, th, td {
    5. 统一聚焦样式。(键盘Tag键 焦点框)
 */
 a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 a:hover {
