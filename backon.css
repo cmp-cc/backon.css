@@ -67,16 +67,26 @@ video {
   vertical-align: baseline; /* 2 */
 }
 
-/**
-对不支持controls属性的浏览器，audio元素给以隐藏
-移除iOS5设备中多余的高度
+/** (delete)
+
+* 对不支持controls属性的浏览器，audio元素给以隐藏
+* 移除iOS5设备中多余的高度
 */
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
-
+/**
+  修复 IE 7/8/9，Firefox 3 和 Safari 4 中hidden属性不起作用的问题
+  在 IE，Safari，Firefox 22- 中隐藏template元素
+  
+  note: template标签用于HTML模板，大家应该都是用过HTML模版开发页面，这个标签是按照实际需求添加的，但是模板又不能在界面上显示，所以这里统一了样式，兼容旧浏览器。
+*/
+[hidden],
+template {
+  display: none;
+}
 
 /* ============ 边距 ======================
             统一默认边距
@@ -97,6 +107,7 @@ thead, tbody, tfoot, th, td {
 */
 a {
   text-decoration: none;
+  background-color: transparent; /* 3  */
 }
 
 a:hover {
@@ -106,9 +117,25 @@ a:hover {
 
 a:active {
   outline: 0 none;
-  background-color: transparent;
+  background-color: transparent; /* 3  */
 }
 
 a:focus {
   outline: 1px dotted;
+}
+
+/**
+*  修正 abbr 在 IE 8/9/10/11，Safari ，Chrome 中没有下划线问题。
+*  语义abbr标签是表示简称或缩写，自身的title属性是完整版，但是此标签在Firefox下默认有下边框，而其他浏览器中没有，这里统一了样式。
+*/
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+* Firefox3+，Safari4/5 和 Chrome 中统一设置为粗体
+*/
+b, strong {
+  font-weight: bold;
 }
