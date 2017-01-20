@@ -1,0 +1,25 @@
+{
+  "name": "backon.css",
+  "version": "1.0.0",
+  "description": "A moderm CSS reset",
+  "scripts": {
+    "start":"npm run build",
+    "build":"cd build && node ./nano-css.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmp-cc/backon.git"
+  },
+  "keywords": [
+    "css"
+  ],
+  "author": "cmp-cc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cmp-cc/backon/issues"
+  },
+  "homepage": "https://github.com/cmp-cc/backon#readme",
+  "devDependencies": {
+    "cssnano": "^3.10.0"
+  }
+}

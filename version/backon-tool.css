@@ -1,0 +1,77 @@
+.left {
+  float: left
+}
+
+.right {
+  float: right
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.overflow {
+  overflow: hidden
+}
+
+.hide {
+  display: none
+}
+
+.show {
+  display: block;
+}
+
+.block {
+  display: block
+}
+
+.inline {
+  display: inline
+}
+
+.clearfix:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both
+}
+
+.clearfix {
+  zoom: 1
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  visibility: hidden;
+  overflow: hidden
+}
+
+.wordwrap {
+  word-break: break-all;
+  word-wrap: break-word
+}
+
+/**
+* 单行省略号
+*/
+.single-row-point {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/*
+* 多行省略号
+*/
+.multi-row-point {
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
