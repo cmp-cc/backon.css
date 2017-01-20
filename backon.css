@@ -69,7 +69,6 @@ h6 {
    1. IE 9 以下不识别HTML 5 元素 [不识别元素默认为inline]
    2. IE 10/11 details 和 summary 定义为 block 的元素
  */
-
 article, aside, footer, header, nav, section,
 figcaption, figure, main,details, menu {
   display: block;
@@ -115,7 +114,6 @@ hr {
  * 3. 修复 IOS 8+ 和 Safari 8+ 显示为下划线 [默认为：空白间隔下划线]
  *         info: https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration-skip
  */
-
 a {
   background-color: transparent; /* 1 */
   text-decoration: none;         /* 2 */
@@ -127,7 +125,6 @@ a {
  * 2. 移除悬浮状态是下划线
  * 3. 统一聚焦样式 (暂保留，并不是必需品)
  */
-
 a:active {
   outline-width: 0;
   background-color: transparent; /* delete IE10 点击出发后灰色背景 */
@@ -223,7 +220,6 @@ pre {
  * 2. ie 8 max-height　异常
  *      info: http://stackoverflow.com/questions/7707/ie8-overflowauto-with-max-height/881597#881597
  */
-
 pre {
   font-size: 1em; /* 1 */
   overflow: auto;  /*2 or [ max-height: none\9 ] */
@@ -247,18 +243,14 @@ mark {
 /**
  * Add the correct font size in all browsers.
  */
-
 small {
   font-size: 80%;
   /*font-size: 12px;*/  /* 中文网页<small>元素字号小于 12px 不易阅读 */
 }
 
-
-
 /**
  * 防止[sub] 和 [sup] 影响行高,作用于所有浏览器
  */
-
 sub, sup {
   font-size: 75%;           /*  Specified in % so that the sup/sup is the right size relative to the surrounding text */
   line-height: 0;           /*  Zero out the line-height so that it doesn't interfere with the positioning that follows */
@@ -280,7 +272,6 @@ sup {
 /**
  * 修正IE 9 以下 display 不为 inline-block.
  */
-
 audio, video ,canvas, output{
   display: inline-block;
 }
@@ -297,7 +288,6 @@ progress {
 /**
  * 修正 IOS 4-7 display 样式. [ 没有controls属性时,元素显示出来 ]
  */
-
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -311,7 +301,6 @@ audio:not([controls]) {
  * 4. 确保不指定[height] 保持等比缩放 [避免只指定width 导致图片变形]
  * 5. 去除图片底部空隙 [ IE 8以下出现，现代浏览器都修复, next update delete, backon.css support ie8+]
  */
-
 img {
   border-style: none; /* 1 */
   max-width: 100%; /* 2 */
@@ -364,7 +353,6 @@ svg:not(:root) {
  * 1. 修正浏览器中字体不继承问题
  * 2. 移除 Firefox 和 Safari 默认外边距.
  */
-
 button, input, optgroup, select, textarea {
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
@@ -375,7 +363,6 @@ button, input, optgroup, select, textarea {
 /**
  * 修正 IE 和 Edge overflow 为 visible
  */
-
 button, input { /* 1 */
   overflow: visible;
 }
@@ -440,7 +427,6 @@ button::-moz-focus-inner,
 /**
  * 恢复先前的聚焦样式规则
  */
-
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -470,7 +456,6 @@ fieldset {
  * 2. 修正 `fieldset` 元素 颜色继承,行高继承问题 [IE 6-9 中颜色不继承]
  * 3. 清除默认填充
  */
-
 legend {
   display: table; /* 1 */
   max-width: 100%; /* 1 * or or width: 100%; */
@@ -520,7 +505,6 @@ textarea {
  * 1. 移除 macOS 中 Chrome 和 Safari 搜索框内边距
  * 2. 隐藏 macOS 中 Chrome 和 Safari 清除按钮
  */
-
 [type="search"]::-webkit-search-cancel-button, /* 1 */
 [type="search"]::-webkit-search-decoration  /* 2 */ {
   -webkit-appearance: none;
@@ -530,7 +514,6 @@ textarea {
  * 1. 修正在IOS 和 Safari 无法点击问题  [ 不可点击的样式类型 ]
  * 2. 修正 Safari 字体 `inherit`
  */
-
 ::-webkit-file-upload-button {
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
