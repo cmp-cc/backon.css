@@ -10,7 +10,7 @@
  * 3. 在所有的浏览器中正确的行高.
  * 4. 防止在 Window Phone(IE) 和 IOS 横屏字号变化. [竖屏14px, 横屏变化为20px, text-size-adjust:100% 统一字体大小]
  * 5. 修复IE10 滚动条悬浮问题 [滚动条不占用边距]
-      info: http://stackoverflow.com/questions/17045132/scrollbar-overlay-in-ie10-how-do-you-stop-that?noredirect=1&lq=1
+             info: http://stackoverflow.com/questions/17045132/scrollbar-overlay-in-ie10-how-do-you-stop-that?noredirect=1&lq=1
  * 6. iphone/android 点击链接时，出现闪烁粉色颜色bug
  */
 html {
@@ -36,9 +36,23 @@ html {
 /**
 * 1. 统一浏览器边距   [ 不盲目设置，仅对需要添加元素设置]
 */
-body, h1, h2, h3, h4, h5, h6, p, ol, ul, dl,dd, li,figure{
+body {
+  margin: 0;
+  
+  /* 通用最佳实践  校验中... */
+/*
+   font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+  
+*/
+}
+
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
+  /*font-weight: 600;  检验中....*/
 }
 
 h1 {
@@ -65,12 +79,33 @@ h6 {
   font-size: 12px;
 }
 
+dd {
+  margin-left: 0;
+}
+pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+ul, ol {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+p {
+  margin-top: 0;
+  /*margin-bottom: 10px;  [使用下边距定义行间隙.... 检验中]*/
+}
+
+td, th {
+  padding: 0;
+}
+
 /**
    1. IE 9 以下不识别HTML 5 元素 [不识别元素默认为inline]
-   2. IE 10/11 details 和 summary 定义为 block 的元素
+   2. IE 10/11 details 定义为 block 的元素
  */
 article, aside, footer, header, nav, section,
-figcaption, figure, main,details, menu {
+figcaption, figure, main, menu, details {
   display: block;
 }
 
@@ -104,6 +139,28 @@ hr {
   height: 0; /* 1 */
   overflow: visible; /* 2 */
 }
+/*
+   hr 最佳实践样式
+*/
+/*hr {
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd
+}*/
+
+hr::before {
+  display: table;
+  content: '';
+}
+
+hr::after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
 
 /* Text-level semantics
    ========================================================================== */
@@ -133,6 +190,13 @@ a:hover {
   outline-width: 0;
   text-decoration: none;
 }
+
+/* 是否真的需要保留 悬浮下划线 and active 下划线 .  校验中....
+a:hover, a:active {
+  text-decoration: underline
+}
+*/
+
 a:focus {
   outline: 1px dotted;
 }
@@ -178,10 +242,10 @@ b, strong {
 }
 
 /**
- * 添加正确的字体 Chrome, Edge, and Safari.   [ 统一为bold, 非bolder]
+ * 添加正确的字体 Chrome, Edge, and Safari.
  */
 b, strong, dt/* dt 表示列表项,真实语义为粗体 */ {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 /**
@@ -191,7 +255,7 @@ b, strong, dt/* dt 表示列表项,真实语义为粗体 */ {
  */
 
 code, kbd, samp, pre {
-  font-family: Consolas /* window */ , Menlo /* mac*/ , Monaco/* mac */, Courier New /* win7 */, monospace, sans-serif;
+  font-family: Consolas /* window */ , "Liberation Mono" /*window */,  Menlo /* mac*/ , Monaco/* mac */, Courier New /* win7 */, monospace, sans-serif;
   font-size: 1em; /* 2 */
 }
 
@@ -241,11 +305,13 @@ mark {
 }
 
 /**
- * Add the correct font size in all browsers.
+ * 不使用[%、em、rem ] 重置small 原因如下：
+ *   1. 当html/body设置字号小于15px时, `small` 取值[80%/.8em/.8rem] 导致 chrome 与 其他浏览器字号显示不一致。
+ *                    chrome 最小字体为12px.
+ *   2.中文字号小于12 不易阅读
  */
 small {
-  font-size: 80%;
-  /*font-size: 12px;*/  /* 中文网页<small>元素字号小于 12px 不易阅读 */
+  font-size: 12px;
 }
 
 /**
@@ -367,6 +433,13 @@ button, input { /* 1 */
   overflow: visible;
 }
 
+/*
+*  校验中....
+*/
+/*optgroup {
+  font-weight: bold
+}*/
+
 /**
  * 修正 button select text-transform 属性继承不一致    [IE 8-11、Firefox、Opera]
  * 所有其他表单控制元素不被继承 text-transform 值
@@ -463,6 +536,8 @@ legend {
   color: inherit; /* 2 */
   line-height: inherit; /* 2 */
   padding: 0; /* 3 */
+  
+  /*box-sizing: border-box;*/  /* 校验中.... */
   
 }
 
