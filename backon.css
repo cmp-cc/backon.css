@@ -11,6 +11,7 @@
  * 4. 防止在 Window Phone(IE) 和 IOS 横屏字号变化. [竖屏14px, 横屏变化为20px, text-size-adjust:100% 统一字体大小]
  * 5. 修复IE10 滚动条悬浮问题 [滚动条不占用边距]
       info: http://stackoverflow.com/questions/17045132/scrollbar-overlay-in-ie10-how-do-you-stop-that?noredirect=1&lq=1
+ * 6. iphone/android 点击链接时，出现闪烁粉色颜色bug   
  */
 html {
   font-family: arial,sans-serif;     /* 1 */
@@ -21,10 +22,12 @@ html {
   -ms-text-size-adjust: 100%;      /* 4 */
   -webkit-text-size-adjust: 100%;  /* 4 */
   -ms-overflow-style: scrollbar;   /* 5 */
+  -webkit-tap-highlight-color: transparent; /* 6 */
 }
 
-*, *::before, *::after {
-  box-sizing: inherit;             /* 2 * 添加前置或后置元素，请使用`伪元素`而非`伪类`. */
+*, *::before, *::after {           /* 2 * 添加前置或后置元素，请使用`伪元素`而非`伪类`. */
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 /* Sections
@@ -40,10 +43,9 @@ body {
   line-height: 1.8;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p, ol, ul, dl,dd, li{
   margin: 0;
   padding: 0;
-  font-weight: bold
 }
 
 h1 {
@@ -96,16 +98,6 @@ template /* 1 */,[hidden] /* 2 */ {
   display: none;
 }
 
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
 /* Grouping content
    ========================================================================== */
 
@@ -123,6 +115,7 @@ figure {
  */
 
 hr {
+  -webkit-box-sizing: content-box; /* 1 */
   box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
@@ -145,13 +138,6 @@ a {
 }
 
 /**
-*  取消默认下划线 [ ins 表示修正，一般配合 del 使用. 请自定义修正样式 ]
-*/
-ins {
-  text-decoration: none;
-}
-
-/**
  * 1. 移除(点击、悬浮)状态时的聚焦框
  * 2. 移除悬浮状态是下划线
  * 3. 统一聚焦样式 (delete)
@@ -168,6 +154,20 @@ a:hover {
 a:focus {
   outline: 1px dotted;
 }
+/**
+* [实际开发中, 通常会使用 `a` 标签 模拟 `button` 避免显示聚焦样式]
+*/
+a:not([href]):focus, a:not([href]):hover {
+  color: inherit;
+  outline: 0;
+}
+
+/**
+*  取消默认下划线 [ ins 表示修正，一般配合 del 使用. 请自定义修正样式 ]
+*/
+ins {
+  text-decoration: none;
+}
 
 /**
  * 1. 移除 Firefox 39 以下底部边框
@@ -183,7 +183,7 @@ abbr {
 /*
 * 明确语义，添加语义问号光标.
 */
-abbr[title], acronym[title] {
+abbr[title], acronym[title], abbr[data-original-title], acronym[data-original-title] {
   cursor: help;
 }
 
@@ -198,7 +198,7 @@ b, strong {
 /**
  * 添加正确的字体 Chrome, Edge, and Safari.   [ 统一为bold, 非bolder]
  */
-b, strong {
+b, strong, dt/* dt 表示列表项 */ {
   font-weight: bold;
 }
 
@@ -229,6 +229,7 @@ pre {
   font-size: inherit;
   color: inherit;
   background-color: transparent;;
+  overflow: auto;
 }
 
 
@@ -295,7 +296,7 @@ sup {
  * 修正IE 9 以下 display 不为 inline-block.
  */
 
-audio, video ,canvas {
+audio, video ,canvas, output{
   display: inline-block;
 }
 
@@ -349,11 +350,12 @@ q:before, q:after {
 
 
 /**
-* 合并单元格边框，重置内边距
+* 合并单元格边框，重置内边距, 默认透明背景
 */
 table {
   border-collapse: collapse;
   border-spacing: 0;
+  background-color: transparent;
 }
 
 /**
@@ -381,7 +383,7 @@ svg:not(:root) {
 button, input, optgroup, select, textarea {
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
+  line-height: inherit; /* 1 */
   margin: 0; /* 2 */
 }
 
@@ -415,10 +417,11 @@ button, html [type="button"], /* 1 */
 }
 
 /**
-* label 元素赋予手型光标
+* label 元素赋予手型光标,inline-block
 */
 label {
   cursor: pointer;
+  display: inline-block;
 }
 
 /**
@@ -427,6 +430,16 @@ label {
 button[disabled], input[disabled] {
   cursor: default;
 }
+
+/**
+* radio/checkbox 不可选时，显示非法光标    (待定中 ....)
+
+input[type="radio"]:disabled,
+input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+}
+
+*/
 
 /**
  * 移除 Firefox 3+ 的内外边距
@@ -469,16 +482,18 @@ fieldset {
 
 /**
  * 1. 修正 Edge,IE,Firefox 文本包裹问题.
- * 2. 修正 `fieldset` 元素 颜色继承问题 [IE 6-9 中颜色不继承]
+ * 2. 修正 `fieldset` 元素 颜色继承,行高继承问题 [IE 6-9 中颜色不继承]
  * 3. 清除默认填充
  */
 
 legend {
   display: table; /* 1 */
-  max-width: 100%; /* 1 */
+  max-width: 100%; /* 1 * or or width: 100%; */
   white-space: normal; /* 1 [中文字体不换行问题] */
   color: inherit; /* 2 */
+  line-height: inherit; /* 2 */
   padding: 0; /* 3 */
+  
 }
 
 /**
