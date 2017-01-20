@@ -34,16 +34,9 @@ html {
    ========================================================================== */
 
 /**
-* 1. 统一浏览器边距
-* 2.设置默认字体大小，字体行高
+* 1. 统一浏览器边距   [ 不盲目设置，仅对需要添加元素设置]
 */
-body {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-h1, h2, h3, h4, h5, h6, p, ol, ul, dl,dd, li{
+body, h1, h2, h3, h4, h5, h6, p, ol, ul, dl,dd, li,figure{
   margin: 0;
   padding: 0;
 }
@@ -102,14 +95,6 @@ template /* 1 */,[hidden] /* 2 */ {
    ========================================================================== */
 
 /**
- *  修复 IE 8/9、Safari中margin失效
- */
-
-figure {
-  margin: 1em 40px;
-}
-
-/**
  * 1. 统一 box-sizing 为 content-box [Firefox 差异]
  * 2. 统一 overflow 为 visible [Edge、IE 差异]
  */
@@ -140,7 +125,7 @@ a {
 /**
  * 1. 移除(点击、悬浮)状态时的聚焦框
  * 2. 移除悬浮状态是下划线
- * 3. 统一聚焦样式 (delete)
+ * 3. 统一聚焦样式 (暂保留，并不是必需品)
  */
 
 a:active {
@@ -183,7 +168,7 @@ abbr {
 /*
 * 明确语义，添加语义问号光标.
 */
-abbr[title], acronym[title], abbr[data-original-title], acronym[data-original-title] {
+abbr[title], acronym[title] {
   cursor: help;
 }
 
@@ -198,7 +183,7 @@ b, strong {
 /**
  * 添加正确的字体 Chrome, Edge, and Safari.   [ 统一为bold, 非bolder]
  */
-b, strong, dt/* dt 表示列表项 */ {
+b, strong, dt/* dt 表示列表项,真实语义为粗体 */ {
   font-weight: bold;
 }
 
