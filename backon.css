@@ -4,10 +4,10 @@
    ========================================================================== */
 
 /**
- * 1. 字体采用系统默认字体. [兼容性好(平台兼容优先), 省流量, 自行覆盖. arial 具备更好的广泛性和通用性]
- *       推荐: font-family: "Helvetica Neue", Helvetica, arial, sans-serif ; Helvetica 在字体设计质量由于 arial
+ * 1. 字体采用系统默认字体. [平台兼容优先, 省流量, 自行覆盖. arial 具备更好的广泛性和通用性]
+ *       候选字体: font-family: "Helvetica Neue", Helvetica, arial, sans-serif ; Helvetica 字体设计质量优于 arial
  * 2. 修复盒模型缺陷
- * 3. Correct the line height in all browsers.
+ * 3. 在所有的浏览器中正确的行高.
  * 4. 防止在 Window Phone(IE) 和 IOS 横屏字号变化. [竖屏14px, 横屏变化为20px, text-size-adjust:100% 统一字体大小]
  * 5. 修复IE10 滚动条悬浮问题 [滚动条不占用边距]
       info: http://stackoverflow.com/questions/17045132/scrollbar-overlay-in-ie10-how-do-you-stop-that?noredirect=1&lq=1
