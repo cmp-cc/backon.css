@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/* ==========================
+    1. 统一浏览器样式展示
+    2. 修复浏览器常见Bug
+    3. 移动优先
+   ========================== */
+
+/* 统一默认边距 */
+body, dl, dd, ul, ol, h1, h2, h3, h4, h5, h6, pre, form, fieldset, legend, input, textarea, optgroup, p, blockquote, figure, hr, menu, dir, thead, tbody, tfoot, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+

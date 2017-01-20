@@ -1,0 +1,556 @@
+@charset "UTF-8";
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+
+/*
+  backon.css :
+    1. 修复浏览器默认样式
+    2. 统一浏览器样式展示
+    3. 修复不同系统浏览器 样式显示Bug
+   ;
+*/
+
+
+
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. 字体采用系统默认字体. [兼容性好(平台兼容优先), 省流量, 自行覆盖]
+ * 2. 修复盒模型缺陷
+ * 3. Correct the line height in all browsers.
+ * 4. 防止在 Window Phone(IE) 和 IOS 横屏字号变化. [竖屏14px, 横屏变化为20px, text-size-adjust:100% 统一字体大小]
+ * 5. 修复IE10 滚动条悬浮问题 [滚动条不占用边距]
+      info: http://stackoverflow.com/questions/17045132/scrollbar-overlay-in-ie10-how-do-you-stop-that?noredirect=1&lq=1
+ */
+html {
+  font-family: arial,sans-serif;     /* 1, arial 设计质量不如 Helvetica/'Helvetica Neue'。 arial 具备更好的广泛性和通用性*/
+  -moz-box-sizing: border-box;      /* 2 */
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: 1.15;               /* 3 */
+  -ms-text-size-adjust: 100%;      /* 4 */
+  -webkit-text-size-adjust: 100%;  /* 4 */
+  -ms-overflow-style: scrollbar;   /* 5 */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;             /* 2 * 添加前置或后置元素，请使用`伪元素`而非`伪类`. */
+}
+
+/* Sections
+   ========================================================================== */
+
+/**
+* 1. 统一浏览器边距
+* 2.设置默认字体大小，字体行高
+*/
+body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: bold
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+/**
+   1. IE 9 以下不识别HTML 5 元素 [不识别元素默认为inline]
+   2. IE 10/11 details 和 summary 定义为 block 的元素
+ */
+
+article, aside, footer, header, nav, section,
+figcaption, figure, main,details, menu {
+  display: block;
+}
+
+/*
+ *  修正 summary 元素 display 为 list-item
+ */
+summary {
+  display: list-item;
+}
+
+
+/**
+ * 1. 修正 IE template 元素不可见.       [ template 模板标签, 应用于HTML 模板页面开发, 通过JS渲染，不显示于页面 ]
+ * 2. 修正 IE 10 以下 [hidden] 为不可见
+ */
+template /* 1 */,[hidden] /* 2 */ {
+  display: none;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ *  修复 IE 8/9、Safari中margin失效
+ */
+
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. 统一 box-sizing 为 content-box [Firefox 差异]
+ * 2. 统一 overflow 为 visible [Edge、IE 差异]
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * 1. 移除 IE 10 点击链接时的灰色背景 (统一默认透明)
+ * 2. 移除 默认链接下划线
+ * 3. 修复 IOS 8+ 和 Safari 8+ 显示为下划线 [默认为：空白间隔下划线]
+ *         info: https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration-skip
+ */
+
+a {
+  background-color: transparent; /* 1 */
+  text-decoration: none;         /* 2 */
+  -webkit-text-decoration-skip: objects; /* 3 */
+}
+
+/**
+*  取消默认下划线 [ ins 表示修正，一般配合 del 使用. 请自定义修正样式 ]
+*/
+ins {
+  text-decoration: none;
+}
+
+/**
+ * 1. 移除(点击、悬浮)状态时的聚焦框
+ * 2. 移除悬浮状态是下划线
+ * 3. 统一聚焦样式 (delete)
+ */
+
+a:active {
+  outline-width: 0;
+  background-color: transparent; /* delete IE10 点击出发后灰色背景 */
+}
+a:hover {
+  outline-width: 0;
+  text-decoration: none;
+}
+a:focus {
+  outline: 1px dotted;
+}
+
+/**
+ * 1. 移除 Firefox 39 以下底部边框
+ * 2. 移除下划线修饰 [ 请自定义修饰符，或 语义样式 ]
+ *
+ * info: https://bugs.chromium.org/p/chromium/issues/detail?id=480213
+ */
+abbr {
+  border-bottom: none; /* 1 */
+  text-decoration: none; /* 2 */
+}
+
+/*
+* 明确语义，添加语义问号光标.
+*/
+abbr[title], acronym[title] {
+  cursor: help;
+}
+
+
+/**
+ * 防止 Safari 6 重复规则 `bolder`
+ */
+b, strong {
+  font-weight: inherit;
+}
+
+/**
+ * 添加正确的字体 Chrome, Edge, and Safari.   [ 统一为bold, 非bolder]
+ */
+b, strong {
+  font-weight: bold;
+}
+
+/**
+ * 1. 修正字体显示与缩放。 [ 系统字体优先 ]
+ * 2. 确保所有浏览器字体显示正常 [ 通过`em`等比 ]
+ * 3. 统一样式显示
+ */
+
+code, kbd, samp, pre {
+  font-family: Consolas /* window */ , Menlo /* mac*/ , Monaco/* mac */, Courier New /* win7 */, monospace, sans-serif;
+  font-size: 1em; /* 2 */
+}
+
+code {
+  color: #bd4147;
+  background-color: #eff0f1
+}
+
+kbd {
+  padding: 0;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+pre {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;;
+}
+
+
+/**
+ * 1. Correct the odd `em` font sizing in all browsers.
+ * 2. ie 8 max-height　异常
+ *      info: http://stackoverflow.com/questions/7707/ie8-overflowauto-with-max-height/881597#881597
+ */
+
+pre {
+  font-size: 1em; /* 1 */
+  overflow: auto;  /*2 or [ max-height: none\9 ] */
+}
+
+/**
+ * Android 4.3 以下添加正确的样式.
+ */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * 修正 IE9 以下显示正确的背景和字体颜色   [ 这里统一所有浏览器为荧光色 (可选)]
+ */
+mark {
+  background-color: #d6e7ff;  /* 浅度荧光色 */
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+  /*font-size: 12px;*/  /* 中文网页<small>元素字号小于 12px 不易阅读 */
+}
+
+
+
+/**
+ * 防止[sub] 和 [sup] 影响行高,作用于所有浏览器
+ */
+
+sub, sup {
+  font-size: 75%;           /*  Specified in % so that the sup/sup is the right size relative to the surrounding text */
+  line-height: 0;           /*  Zero out the line-height so that it doesn't interfere with the positioning that follows */
+  position: relative;       /*  Where the magic happens: makes all browsers position the sup/sup properly, relative to the surrounding text */
+  vertical-align: baseline; /*  Note that if you're using Eric Meyer's reset.css, this is already set and you can remove this rule */
+}
+
+sub {
+  bottom: -.25em;  /* Move the subscripted text down, but only half as far down as the superscript moved up */
+}
+
+sup {
+  top: -.5em;  /* Move the superscripted text up */
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * 修正IE 9 以下 display 不为 inline-block.
+ */
+
+audio, video ,canvas {
+  display: inline-block;
+}
+
+/**
+ * 1. 修正 IE 9 以下 display 样式 [未定义元素默认为 inline-block]
+ * 2. 修正垂直对齐 [Chrome, Firefox, and Opera 默认值不一致]
+ */
+progress {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
+ * 修正 IOS 4-7 display 样式. [ 没有controls属性时,元素显示出来 ]
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * 1. 移除 IE10 以下默认边框
+ * 2. 支持响应式 [自适应]
+ * 3. 修正 IE8 图片消失bug [设置max-width:100%, ie8 下图片消失了？]
+ *        dome： http://www.456bereastreet.com/lab/img-max-width/
+ * 4. 确保不指定[height] 保持等比缩放 [避免只指定width 导致图片变形]
+ * 5. 去除图片底部空隙 [ IE 8以下出现，现代浏览器都修复, next update delete, backon.css support ie8+]
+ */
+
+img {
+  border-style: none; /* 1 */
+  max-width: 100%; /* 2 */
+  width: auto\9;   /* 3 * \9 是 Css hack， 它表示只作用于 Internet Explorer 7 - 9 */
+  height: auto;    /* 4 */
+  vertical-align: bottom; /* 5 */
+}
+
+/**
+* 取消默认嵌套引用
+*/
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+
+/**
+* 合并单元格边框，重置内边距
+*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**
+*  取消列表样式 [ 请单独设置 ]
+*/
+ul, ol {
+  list-style-type: none;
+}
+
+/**
+ * 修正 IE9 [overflow] 异常
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. 修正浏览器中字体不继承问题
+ * 2. 移除 Firefox 和 Safari 默认外边距.
+ */
+
+button, input, optgroup, select, textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * 修正 IE 和 Edge overflow 为 visible
+ */
+
+button, input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * 修正 button select text-transform 属性继承不一致    [IE 8-11、Firefox、Opera]
+ * 所有其他表单控制元素不被继承 text-transform 值
+ *    info : http://tjvantoll.com/2012/07/10/default-browser-handling-of-the-css-text-transform-property/
+ */
+button, select { /* 1 */
+  text-transform: none;
+}
+
+
+/**
+ * 1. 避免 WebKit bug 破坏原生的 `audio` 和 `video`的控制器  [ 出现在Android 4.0.* ]
+ * 2. 修正在IOS 和 Safari「input」 无法点击问题  [ 不可点击的样式类型 ]
+ * 3. 统一点击类型「input」为光标样式 [ 默认为 : default ]
+ */
+button, html [type="button"], /* 1 */
+[type="reset"], [type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+
+/**
+* label 元素赋予手型光标
+*/
+label {
+  cursor: pointer;
+}
+
+/**
+* 重置按钮禁用时光标样式 [ 默认为: pointer ]
+*/
+button[disabled], input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 移除 Firefox 3+ 的内外边距
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * 恢复先前的聚焦样式规则
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+* 为可拖动元素添加拖动光标
+*/
+[draggable="true"] {
+  cursor: move;
+}
+
+/**
+ * 定义一致的边框、外边距和内边距
+ */
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/**
+ * 1. 修正 Edge,IE,Firefox 文本包裹问题.
+ * 2. 修正 `fieldset` 元素 颜色继承问题 [IE 6-9 中颜色不继承]
+ * 3. 清除默认填充
+ */
+
+legend {
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  white-space: normal; /* 1 [中文字体不换行问题] */
+  color: inherit; /* 2 */
+  padding: 0; /* 3 */
+}
+
+/**
+ * 1. 移除 IE 默认垂直滚动条 [ IE 6-11 ]
+ * 2. 禁止水平拖动 [ 防止破坏布局 ]
+ */
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+/**
+ * 1. 移除 IE 以下默认内边距 [IE 8-10]
+ * 2. 修正 box sizing [IE 8-10 为 content-box]
+ */
+[type="checkbox"], [type="radio"] {
+  padding: 0; /* 1 */
+  box-sizing: border-box; /* 2, global static default */
+}
+
+/**
+ * 修正 Chrome 「cursor」 样式 [Correct the cursor style of increment and decrement buttons in Chrome]
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. 修正 Safari, Chrome 的 appearance 属性被设置为 searchfield
+ * 2. 修正 Safari 「outline」样式
+ */
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * 1. 移除 macOS 中 Chrome 和 Safari 搜索框内边距
+ * 2. 隐藏 macOS 中 Chrome 和 Safari 清除按钮
+ */
+
+[type="search"]::-webkit-search-cancel-button, /* 1 */
+[type="search"]::-webkit-search-decoration  /* 2 */ {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. 修正在IOS 和 Safari 无法点击问题  [ 不可点击的样式类型 ]
+ * 2. 修正 Safari 字体 `inherit`
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/**
+* 修正 Chrome option 中文字无法显示的问题 [Chrome 30 . 2013 year version]
+*/
+select:disabled option:checked, option:disabled:checked {
+  color: #d2d2d2;
+}
+
