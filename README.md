@@ -2,6 +2,9 @@
 
 ## backon.css
 A modern CSS reset
+
+[[![Size](https://github.com/cmp-cc/backon.css/tree/master/dist/backon.min.css.svg?color=orange&label=file%20size)](https://github.com/cmp-cc/backon.css/tree/master/dist/backon.min.css) [![npm](https://img.shields.io/npm/v/backon.css.svg)](https://www.npmjs.com/package/backon.css)
+
 - ---
 
 ## Installation
