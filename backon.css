@@ -7,22 +7,20 @@
  * 1. 字体采用系统默认字体. [平台兼容优先, 省流量, 自行覆盖. arial 具备更好的广泛性和通用性]
  *       候选字体: font-family: "Helvetica Neue", Helvetica, arial, sans-serif ; Helvetica 字体设计质量优于 arial
  * 2. 修复盒模型缺陷
- * 3. 在所有的浏览器中正确的行高.
- * 4. 防止在 Window Phone(IE) 和 IOS 横屏字号变化. [竖屏14px, 横屏变化为20px, text-size-adjust:100% 统一字体大小]
- * 5. 修复IE10 滚动条悬浮问题 [滚动条不占用边距]
+ * 3. 防止在 Window Phone(IE) 和 IOS 横屏字号变化. [竖屏14px, 横屏变化为20px, text-size-adjust:100% 统一字体大小]
+ * 4. 修复IE10 滚动条悬浮问题 [滚动条不占用边距]
              info: http://stackoverflow.com/questions/17045132/scrollbar-overlay-in-ie10-how-do-you-stop-that?noredirect=1&lq=1
- * 6. iphone/android 点击链接时，出现闪烁粉色颜色bug
+ * 5. iphone/android 点击链接时，出现闪烁粉色颜色bug
  */
 html {
   font-family: arial,sans-serif;     /* 1 */
   -moz-box-sizing: border-box;       /* 2 */
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  line-height: 1.15;               /* 3 */
-  -ms-text-size-adjust: 100%;      /* 4 */
-  -webkit-text-size-adjust: 100%;  /* 4 */
-  -ms-overflow-style: scrollbar;   /* 5 */
-  -webkit-tap-highlight-color: transparent; /* 6 */
+  -ms-text-size-adjust: 100%;      /* 3 */
+  -webkit-text-size-adjust: 100%;  /* 3 */
+  -ms-overflow-style: scrollbar;   /* 4 */
+  -webkit-tap-highlight-color: transparent; /* 5 */
 }
 
 *, *::before, *::after {           /* 2 * 添加前置或后置元素，请使用`伪元素`而非`伪类`. */
@@ -39,7 +37,7 @@ html {
 body {
   margin: 0;             /*  边距 */
   font-size: 14px;       /*  字号 */
-  line-height: 1.5;      /*  行高 */
+  line-height: 1.5;      /*  行高 , 多数浏览器默认行高为 1.15 */
   color: #333;           /*  颜色 */
   background-color: #fff;/*  背景 */
 }
