@@ -1,4 +1,4 @@
-﻿/*! backon.css v1.4.0 | MIT License | https://github.com/cmp-cc/backon.css | 基于 normalize.css */
+﻿/*! backon.css v1.5.0 | MIT License | https://github.com/cmp-cc/backon.css | 基于 normalize.css */
 
 /* Document
    ========================================================================== */
@@ -42,10 +42,17 @@ body {
   background-color: #fff;/*  背景 */
 }
 
+/**
+*   1. 清除默认边距
+*   2. 统一样式
+*/
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-weight: 600;
+  margin-top: 0;        /* 1 */
+  margin-bottom: 0;     /* 1 */
+  font-weight: 500;     /* 2 */
+  line-height: 1.1;     /* 2 */
+  color: inherit;       /* 2 */
+  font-family: inherit; /* 2 */
 }
 
 h1 {
@@ -54,6 +61,7 @@ h1 {
 
 h2 {
   font-size: 30px;
+  
 }
 
 h3 {
@@ -101,6 +109,7 @@ p {
 
 td, th {
   padding: 0;
+  text-align: left;  /* 统一默认左对齐 */
 }
 
 /**
@@ -118,7 +127,6 @@ figcaption, figure, main, menu, details {
 summary {
   display: list-item;
 }
-
 
 /**
  * 1. 修正 IE template 元素不可见.       [ template 模板标签, 应用于HTML 模板页面开发, 通过JS渲染，不显示于页面 ]
@@ -254,7 +262,6 @@ b, strong, dt/* dt 表示列表项,真实语义为粗体 */ {
  * 2. 确保所有浏览器字体显示正常 [ 通过`em`等比 ]
  * 3. 统一样式显示
  */
-
 code, kbd, samp, pre {
   font-family: Consolas /* window */ , "Liberation Mono" /*window */,  Menlo /* mac*/ , Monaco/* mac */, Courier New /* win7 */, monospace, sans-serif;
   font-size: 1em; /* 2 */
@@ -281,7 +288,7 @@ pre {
 
 
 /**
- * 1. Correct the odd `em` font sizing in all browsers.
+ * 1. 统一字号显示
  * 2. ie 8 max-height　异常
  *      info: http://stackoverflow.com/questions/7707/ie8-overflowauto-with-max-height/881597#881597
  * 3. 清除边距
@@ -433,7 +440,7 @@ svg:not(:root) {
 button, input, optgroup, select, textarea {
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
-  line-height: inherit; /* 1 */
+  line-height: 1.15; /* 1 , [ IE11设置 input{line-height: inherit;} 无效, 这里统一行高 ] */
   margin: 0; /* 2 */
 }
 
@@ -443,13 +450,6 @@ button, input, optgroup, select, textarea {
 button, input { /* 1 */
   overflow: visible;
 }
-
-/*
-*  校验中....
-*/
-/*optgroup {
-  font-weight: bold
-}*/
 
 /**
  * 修正 button select text-transform 属性继承不一致    [IE 8-11、Firefox、Opera]
@@ -487,15 +487,14 @@ button[disabled], input[disabled] {
   cursor: default;
 }
 
-/**
-* radio/checkbox 不可选时，显示非法光标    (待定中 ....)
-
+/*
+* radio/checkbox 不可选时，显示非法光标    (犹豫中 ....)
+*/
 input[type="radio"]:disabled,
 input[type="checkbox"]:disabled {
   cursor: not-allowed;
 }
 
-*/
 
 /**
  * 移除 Firefox 3+ 的内外边距
@@ -614,11 +613,9 @@ select:disabled option:checked, option:disabled:checked {
 
 
 /*
-backon.css 不支持元素
+backon.css 不建议使用的元素
 
 * dir
 * hgroup
 * dialog
-
-
 */
