@@ -30,20 +30,18 @@ html {
   box-sizing: inherit;
 }
 
-/* Sections
+/* Sections 统一浏览器边距 [ 不盲目设置，仅对需要添加元素设置]
    ========================================================================== */
 
 /**
-* 1. 统一浏览器边距   [ 不盲目设置，仅对需要添加元素设置]
-* 2. 统一基础样式 [自行覆盖]
+* 1. 统一基础样式     [自行覆盖]
 */
 body {
-  margin: 0; /* 1 */
-  
-  font-size: 14px;       /* 2, 字号 */
-  line-height: 1.5;      /* 2, 行高*/
-  color: #333;           /* 2, 颜色*/
-  background-color: #fff;/* 2, 背景*/
+  margin: 0;             /*  边距 */
+  font-size: 14px;       /*  字号 */
+  line-height: 1.5;      /*  行高 */
+  color: #333;           /*  颜色 */
+  background-color: #fff;/*  背景 */
 }
 
 h1, h2, h3, h4, h5, h6 {
