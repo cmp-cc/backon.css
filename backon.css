@@ -613,9 +613,20 @@ select:disabled option:checked, option:disabled:checked {
 
 
 /*
-backon.css 不建议使用的元素
+backon.css 不建议使用的元素标签
 
+* marquee
+* applet
+* basefont
 * dir
 * hgroup
 * dialog
+* center
+* font
+* isindex
+* s
+* strike
+* u
+* xmp
+*
 */
