@@ -497,7 +497,7 @@ button::-moz-focus-inner,
 }
 
 /**
- * 恢复先前的聚焦样式规则
+ * 恢复聚焦样式规则
  */
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
@@ -550,11 +550,10 @@ textarea {
 
 /**
  * 1. 移除 IE 以下默认内边距 [IE 8-10]
- * 2. 修正 box sizing [IE 8-10 为 content-box]
+ * 2. 修正 box sizing [IE 8-10 为 content-box] [ global static default ]
  */
 [type="checkbox"], [type="radio"] {
   padding: 0; /* 1 */
-  box-sizing: border-box; /* 2, global static default */
 }
 
 /**
@@ -598,7 +597,6 @@ textarea {
 select:disabled option:checked, option:disabled:checked {
   color: #d2d2d2;
 }
-
 
 /*
 backon.css 不建议使用的元素标签
