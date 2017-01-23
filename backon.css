@@ -289,9 +289,6 @@ pre {
   overflow: auto;   /* 1 or [ max-height: none\9 ] */
   color: inherit;
   background-color: transparent;
-  
-  word-break: break-all;
-  word-wrap: break-word;
 }
 
 
