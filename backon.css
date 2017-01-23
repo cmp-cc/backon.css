@@ -97,12 +97,7 @@ input,textarea {
   padding: 0;
 }
 
-dl,pre {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-p {
+p, pre, dl {
   margin-top: 0;
   margin-bottom: 0;
 }
