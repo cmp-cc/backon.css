@@ -24,40 +24,40 @@
   display: block;
 }
 
-.block {
-  display: block
-}
-
 .inline {
   display: inline
 }
 
-.clearfix:after {
-  content: '\20';
+.inline-block {
+  display: block
+}
+
+.min-z-index {
+  z-index: -1;
+}
+
+.max-z-index {
+  z-index: 999;
+}
+
+/*
+* 清除浮动
+*/
+.clearfix::after {
   display: block;
-  height: 0;
-  clear: both
-}
-
-.clearfix {
-  zoom: 1
-}
-
-.clear {
+  content: '';
   clear: both;
-  height: 0;
-  line-height: 0;
-  font-size: 0;
-  visibility: hidden;
-  overflow: hidden
 }
 
+/*
+* 自动换行
+*/
 .wordwrap {
   word-break: break-all;
   word-wrap: break-word
 }
 
-/**
+/*
 * 单行省略号
 */
 .single-row-point {
