@@ -183,7 +183,6 @@ a {
 /**
  * 1. 移除(点击、悬浮)状态时的聚焦框
  * 2. 移除悬浮状态是下划线
- * 3. 统一聚焦样式 (暂保留，并不是必需品)
  */
 a:active {
   outline-width: 0;
@@ -191,18 +190,9 @@ a:active {
 }
 a:hover {
   outline-width: 0;
-  text-decoration: none;
+  text-decoration: none;  /* [text-decoration: underline; ] */
 }
 
-/* 是否真的需要保留 悬浮下划线 and active 下划线 .  校验中....
-a:hover, a:active {
-  text-decoration: underline
-}
-*/
-
-a:focus {
-  outline: 1px dotted;
-}
 /**
 * [实际开发中, 通常会使用 `a` 标签 模拟 `button` 避免显示聚焦样式]
 */
