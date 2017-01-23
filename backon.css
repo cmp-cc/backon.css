@@ -137,11 +137,10 @@ template /* 1 */,[hidden] /* 2 */ {
 /**
  * 1. 统一 box-sizing 为 content-box [Firefox 差异]
  * 2. 统一 默认样式, 解决不同浏览器之间的样式差异
- *    2.1、 纠正越界问题 [ 除Edge/IE 为`hidden`, 其他浏览器均为`visible`, `visible`属性会导致越界 ]
- *    2.2、 纠正不同浏览器之间的样式差异
+ *    2.1、 修正越界问题 [ 除Edge/IE 为`hidden`, 其他浏览器均为`visible`, `visible`属性会导致越界 ]
+ *    2.2、 修正不同浏览器之间的样式差异
  * 3. 默认 清除浮动
  */
-
 hr {
   -webkit-box-sizing: content-box; /* 1 */
   box-sizing: content-box; /* 1 */
@@ -151,7 +150,13 @@ hr {
   border: 0;               /* 2.2 */
   border-bottom: 1px solid #ccc; /* 2.2 */
   padding: 0 ; /* 2.2  校验中.... */
-  
+}
+
+hr {
+  display: block;
+  height: 1px; border: 0;
+  border-top: 1px solid #ccc; margin: 1em 0;
+  padding: 0;
 }
 
 hr::before {
@@ -219,6 +224,15 @@ ins {
   text-decoration: none;
 }
 
+
+/**
+ * Android 4.3 以下添加正确的样式.    [ 默认斜体 ]
+ */
+dfn {
+  font-style: italic;
+}
+
+
 /**
  * 1. 移除 Firefox 39 以下底部边框
  * 2. 移除下划线修饰 [ 请自定义修饰符，或 语义样式 ]
@@ -233,7 +247,7 @@ abbr {
 /*
 * 明确语义，添加语义问号光标.
 */
-abbr[title], acronym[title] {
+abbr[title], acronym[title] /*, dfn[title] 校验中...*/ {
   cursor: help;
 }
 
@@ -283,13 +297,6 @@ pre {
   background-color: transparent;
 }
 
-
-/**
- * Android 4.3 以下添加正确的样式.
- */
-dfn {
-  font-style: italic;
-}
 
 /**
  * 修正 IE9 以下显示正确的背景和字体颜色   [ 这里统一所有浏览器为荧光色 (可选)]
