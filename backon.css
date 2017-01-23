@@ -8,6 +8,7 @@
  *       候选字体: font-family: "Helvetica Neue", Helvetica, arial, sans-serif ; Helvetica 字体设计质量优于 arial
  * 2. 修复盒模型缺陷
  * 3. 防止在 Window Phone(IE) 和 IOS 横屏字号变化. [竖屏14px, 横屏变化为20px, text-size-adjust:100% 统一字体大小]
+                   https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
  * 4. 修复IE10 滚动条悬浮问题 [滚动条不占用边距]
              info: http://stackoverflow.com/questions/17045132/scrollbar-overlay-in-ie10-how-do-you-stop-that?noredirect=1&lq=1
  * 5. iphone/android 点击链接时，出现闪烁粉色颜色bug
@@ -37,7 +38,7 @@ html {
 body {
   margin: 0;             /*  边距 */
   font-size: 14px;       /*  字号 */
-  line-height: 1.5;      /*  行高 , 多数浏览器默认行高为 1.15 */
+  line-height: 1.5;      /*  行高 ,   多数浏览器默认行高为 1.15 */
   color: #333;           /*  颜色 */
   background-color: #fff;/*  背景 */
 }
@@ -152,13 +153,6 @@ hr {
   padding: 0 ; /* 2.2  校验中.... */
 }
 
-hr {
-  display: block;
-  height: 1px; border: 0;
-  border-top: 1px solid #ccc; margin: 1em 0;
-  padding: 0;
-}
-
 hr::before {
   display: table;
   content: '';
@@ -247,7 +241,7 @@ abbr {
 /*
 * 明确语义，添加语义问号光标.
 */
-abbr[title], acronym[title] /*, dfn[title] 校验中...*/ {
+abbr[title], acronym[title] , dfn[title] {
   cursor: help;
 }
 
@@ -272,7 +266,7 @@ b, strong, dt/* dt 表示列表项,真实语义为粗体 */ {
  * 3. 统一样式显示
  */
 code, kbd, samp, pre {
-  font-family: Consolas /* window */ , "Liberation Mono" /*window */,  Menlo /* mac*/ , Monaco/* mac */, Courier New /* win7 */, monospace, sans-serif;
+  font-family: Consolas /* window */ , "Liberation Mono" /*window */,  Menlo /* mac*/ , Monaco/* mac */, Courier New /* win7 */, monospace;
   font-size: 1em; /* 2 */
 }
 
@@ -295,6 +289,9 @@ pre {
   overflow: auto;   /* 1 or [ max-height: none\9 ] */
   color: inherit;
   background-color: transparent;
+  
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 
