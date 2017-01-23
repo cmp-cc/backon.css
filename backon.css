@@ -171,14 +171,14 @@ hr::after {
 
 /**
  * 1. 移除 IE 10 点击链接时的灰色背景 (统一默认透明)
- * 2. 移除 默认链接下划线
- * 3. 修复 IOS 8+ 和 Safari 8+ 显示为下划线 [默认为：空白间隔下划线]
+ * 2. 修复 IOS 8+ 和 Safari 8+ 显示为下划线 [默认为：空白间隔下划线]
  *         info: https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration-skip
+ * 3. 移除 默认链接下划线
  */
 a {
   background-color: transparent; /* 1 */
-  text-decoration: none;         /* 2 */
-  -webkit-text-decoration-skip: objects; /* 3 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+  text-decoration: none;         /* 3 */
 }
 
 /**
@@ -273,26 +273,14 @@ kbd {
   font-weight: bold;
 }
 
-pre {
-  padding: 0;
-  font-size: inherit;
-  color: inherit;
-  background-color: transparent;;
-  overflow: auto;
-}
-
-
 /**
- * 1. 统一字号显示
- * 2. ie 8 max-height　异常
+ * 1. ie 8 max-height　异常
  *      info: http://stackoverflow.com/questions/7707/ie8-overflowauto-with-max-height/881597#881597
- * 3. 清除边距
  */
 pre {
-  font-size: 1em;   /* 1 */
-  overflow: auto;   /* 2 or [ max-height: none\9 ] */
-  margin-top: 0;    /* 3 */
-  margin-bottom: 0; /* 3 */
+  overflow: auto;   /* 1 or [ max-height: none\9 ] */
+  color: inherit;
+  background-color: transparent;
 }
 
 
@@ -411,7 +399,6 @@ table {
 */
 ul, ol {
   list-style-type: none; /* 1 */
-  
   padding-left: 0;  /* 2 */
   margin-top: 0;    /* 2 */
   margin-bottom: 0; /* 2 */
@@ -543,7 +530,6 @@ legend {
   padding: 0; /* 3 or padding-left: 0; * /
   
   /*box-sizing: border-box;*/  /* 校验中.... */
-  
 }
 
 /**
