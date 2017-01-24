@@ -37,7 +37,6 @@ hr {
   background: transparent; /* 2.2 */
   border: 0;               /* 2.2 */
   border-bottom: 1px solid #ccc; /* 2.2 */
-  text-align: center; /* 2.2 [ IE6-11 与 其他浏览器差异, 其他浏览器均为定义`text-align`] */
 }
 ```
 
