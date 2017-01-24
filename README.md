@@ -1,8 +1,7 @@
 ## backon.css
 
-<div style="font-size: 80px;float: right;">
-  <a href="https://github.com/cmp-cc/backon.css" style="text-decoration: none">🔧</a>
-</div>
+  <a href="https://github.com/cmp-cc/backon.css" style="text-decoration: none;font-size: 80px;float: right;">🔧</a>
+
 > A modern CSS resets
 
 [![Size](https://badge-size.herokuapp.com/cmp-cc/backon.css/master/dist/backon.min.css.svg?color=orange&label=file%20size)](https://raw.githubusercontent.com/cmp-cc/backon.css/master/dist/backon.min.css)
