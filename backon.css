@@ -150,12 +150,7 @@ hr {
   background: transparent; /* 2.2 */
   border: 0;               /* 2.2 */
   border-bottom: 1px solid #ccc; /* 2.2 */
-  padding: 0 ; /* 2.2  校验中.... */
-}
-
-hr::before {
-  display: table;
-  content: '';
+  text-align: center; /* 2.2 [ IE6-11 与 其他浏览器差异, 其他浏览器均为定义`text-align`] */
 }
 
 hr::after {
@@ -516,9 +511,7 @@ legend {
   white-space: normal; /* 1 [中文字体不换行问题] */
   color: inherit; /* 2 */
   line-height: inherit; /* 2 */
-  padding: 0; /* 3 or padding-left: 0; * /
-  
-  /*box-sizing: border-box;*/  /* 校验中.... */
+  padding: 0; /* 3 or padding-left: 0; */
 }
 
 /**

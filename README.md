@@ -1,9 +1,7 @@
-## backon.css
+#[backon.css](https://github.com/cmp-cc/backon.css/)
 
 
-<a href="https://github.com/cmp-cc/backon.css"><img
-  src="logo.png" alt="backon Logo"
-  width="70" height="70" align="right"></a>
+<a href="https://github.com/cmp-cc/backon.css"><img src="logo.png" alt="backon Logo" width="70" height="70" align="right"></a>
 
 > A modern CSS resets
 
