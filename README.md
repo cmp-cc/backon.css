@@ -1,5 +1,9 @@
 ## backon.css
-A modern CSS reset
+
+<header style="font-size: 80px;float: right;">
+  <a href="https://github.com/cmp-cc/backon.css" style="text-decoration: none">🔧</a>
+</header>
+> A modern CSS resets
 
 [![Size](https://badge-size.herokuapp.com/cmp-cc/backon.css/master/dist/backon.min.css.svg?color=orange&label=file%20size)](https://raw.githubusercontent.com/cmp-cc/backon.css/master/dist/backon.min.css)
 [![npm](https://img.shields.io/npm/v/backon.css.svg)](https://www.npmjs.com/package/backon.css)
@@ -8,7 +12,7 @@ A modern CSS reset
 
 
 ## Installation
-```
+```sh
 npm install backon.css --save
 
 ```
@@ -17,6 +21,17 @@ npm install backon.css --save
 
 download [backon.min.css](https://raw.githubusercontent.com/cmp-cc/backon.css/master/dist/backon.min.css)
 
+## Features
+* Preserves useful defaults, unlike many CSS resets.
+* Normalizes styles for a wide range of elements.
+* Corrects bugs and common browser inconsistencies.
+* Improves usability with subtle modifications.
+* Explains what code does using detailed comments.
+
+## Browser support
+* Safari 6+
+* Internet Explorer 8+
+* Chrome、Firefox、Opera [ last two ]
 
 ## License
 [MIT](http://opensource.org/licenses/MIT)

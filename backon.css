@@ -348,9 +348,9 @@ audio:not([controls]) {
  * 1. 移除 IE10 以下默认边框
  * 2. 支持响应式 [自适应]
  * 3. 修正 IE8 图片消失bug [设置max-width:100%, ie8 下图片消失了？]
- *        dome： http://www.456bereastreet.com/lab/img-max-width/
+ *        演示： http://www.456bereastreet.com/lab/img-max-width/
  * 4. 确保不指定[height] 保持等比缩放 [避免只指定width 导致图片变形]
- * 5. 去除图片底部空隙 [ IE 8以下出现，现代浏览器都修复, next update delete, backon.css support ie8+]
+ * 5. 去除图片底部空隙 [ IE 8以下出现，现代浏览器都已修复, next update delete, backon.css support ie8+]
  */
 img {
   border-style: none; /* 1 */
@@ -405,13 +405,13 @@ svg:not(:root) {
    ========================================================================== */
 
 /**
- * 1. 修正浏览器中字体不继承问题
+ * 1. 修正浏览器中字体不继承问题  [ 说明: `input`,`textarea` 默认是不继承字体颜色, 请在实际项目中定义 ]
  * 2. 移除 Firefox 和 Safari 默认外边距.
  */
 button, input, optgroup, select, textarea {
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 , [ IE11设置 input{line-height: inherit;} 无效, 这里统一行高 ] */
+  line-height: 1.15; /* 1 , [ IE11设置 input{line-height: inherit;} 无效, 这里统一正确的行高 ] */
   margin: 0; /* 2 */
 }
 
@@ -581,8 +581,11 @@ select:disabled option:checked, option:disabled:checked {
 }
 
 /*
-backon.css 不建议使用的元素标签
+backon.css 不建议使用的标签元素
 
+* plaintext
+* listing
+* isindex
 * layer
 * marquee
 * applet
@@ -596,6 +599,7 @@ backon.css 不建议使用的元素标签
 * s
 * strike
 * u
+* multicol
 * xmp
 *
 */
