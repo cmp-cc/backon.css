@@ -15,7 +15,7 @@ npm install backon.css --save
 
 **or**
 
-download [backon.css](https://raw.githubusercontent.com/cmp-cc/backon.css/master/dist/backon.min.css)
+download [backon.min.css](https://raw.githubusercontent.com/cmp-cc/backon.css/master/dist/backon.min.css)
 
 
 ## License
