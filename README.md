@@ -1,5 +1,3 @@
-
-
 ## backon.css
 A modern CSS reset
 
@@ -13,11 +11,12 @@ A modern CSS reset
 ```
 npm install backon.css --save
 
-or
-
-[download backon.css](https://raw.githubusercontent.com/cmp-cc/backon.css/master/dist/backon.min.css)
-
 ```
+
+###### or
+
+download [backon.css](https://raw.githubusercontent.com/cmp-cc/backon.css/master/dist/backon.min.css)
+
 
 ## License
 [MIT](http://opensource.org/licenses/MIT)
