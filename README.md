@@ -13,7 +13,7 @@ npm install backon.css --save
 
 ```
 
-###### or
+**or**
 
 download [backon.css](https://raw.githubusercontent.com/cmp-cc/backon.css/master/dist/backon.min.css)
 
