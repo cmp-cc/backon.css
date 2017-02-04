@@ -1,3 +1,20 @@
+## [v1.5.2]
+### Add
+* before
+```
+a {
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+}
+```
+* after
+```
+a {
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+  text-decoration: none; /* 3, 移除默认下划线,增加其可读性 */
+}
+```
 
 ## [v1.5.1]
 
