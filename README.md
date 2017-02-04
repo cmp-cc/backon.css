@@ -20,11 +20,10 @@ npm install backon.css --save
 download [backon.min.css](https://raw.githubusercontent.com/cmp-cc/backon.css/master/dist/backon.min.css)
 
 ## Features
-* Preserves useful defaults, unlike many CSS resets.
-* Normalizes styles for a wide range of elements.
-* Corrects bugs and common browser inconsistencies.
-* Improves usability with subtle modifications.
-* Explains what code does using detailed comments.
+* 重置并统一浏览器样式，确保不同平台下浏览器展示效果一致
+* 修复常见的浏览器 bugs
+* 考虑响应式、移动设备，并确保向后兼容
+* 尽可能详细的注释说明
 
 ## Browser support
 * Safari 6+

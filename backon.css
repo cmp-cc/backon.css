@@ -573,27 +573,32 @@ select:disabled option:checked, option:disabled:checked {
   color: #d2d2d2;
 }
 
-/*
+/**
+*
+* 1. 重置并统一浏览器样式，确保不同平台下浏览器展示效果一致
+* 2. 修复常见的浏览器 bugs
+* 3. 考虑响应式、移动设备，并确保向后兼容
+* 4. 尽可能详细的注释说明
+
+
 backon.css 不建议使用的标签元素
 
-* center
-* plaintext
-* listing
-* isindex
-* layer
-* marquee
 * applet
 * basefont
-* dir
-* hgroup
-* dialog
 * center
+* dialog
+* dir
 * font
+* hgroup
 * isindex
+* layer
+* listing
+* marquee
+* multicol
+* plaintext
 * s
 * strike
 * u
-* multicol
 * xmp
-*
 */
+
