@@ -27,6 +27,7 @@ html {
   -webkit-tap-highlight-color: transparent; /* 6 */
 }
 ```
+
 ## [v1.5.2]
 ### Add
 * before
@@ -46,7 +47,6 @@ a {
 ```
 
 ## [v1.5.1]
-
 ### Remove:
 * before
 ```
@@ -85,8 +85,6 @@ hr {
   border-bottom: 1px solid #ccc; /* 2.2 */
 }
 ```
-
-
 
 ## [v1.5.0]
 

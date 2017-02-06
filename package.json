@@ -11,7 +11,8 @@
     "url": "git+https://github.com/cmp-cc/backon.git"
   },
   "keywords": [
-    "css"
+    "css",
+    "reset"
   ],
   "author": "cmp-cc",
   "license": "MIT",
