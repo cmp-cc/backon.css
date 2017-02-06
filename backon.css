@@ -10,7 +10,6 @@
                 可参考：
                    https://www.paulirish.com/2012/box-sizing-border-box-ftw/
                    https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
-                   http://blog.teamtreehouse.com/box-sizing-secret-simple-css-layouts#comment-50223
  * 3. 防止在 Window Phone(IE) 和 IOS 横屏字号变化. [竖屏14px, 横屏变化为20px问题]
                 https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
  * 4. 修正 Chrome/Firefox 内容高度 小于 页面高度时, 不显示滚动条。[导致页面切换时, 显示异常]
