@@ -13,10 +13,10 @@
 ```sh
 npm install backon.css --save
 
-// webpack , browserify or require
+// webpack , browserify
 import 'backon.css/dist/backon.min.css'
 
-// or node require
+// or require
 require('backon.css/dist/backon.min.css')
 
 ```
