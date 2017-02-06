@@ -1,8 +1,12 @@
 ## [v1.5.4]
 **Support LESS and SASS**
+**Support for preprocessors(Sass, Less, Stylus) postfix **
 ```
-// LESS/SASS
+// LESS/SASS/Stylus
 @import '~backon.css/dist/backon.min';
+
+// 预处理后缀格式并不是必需品, 如下等价
+@import '~backon.css/dist/backon.min.css';
 ```
 
 ## [v1.5.3]

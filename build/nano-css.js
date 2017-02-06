@@ -9,4 +9,5 @@ cssnano.process(code.toString() ,{
   fs.writeFileSync('../dist/backon.min.css', result.css);
   fs.writeFileSync('../dist/backon.min.less', result.css);
   fs.writeFileSync('../dist/backon.min.scss', result.css);
+  fs.writeFileSync('../dist/backon.min.styl', result.css);
 })
