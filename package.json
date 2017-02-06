@@ -1,6 +1,6 @@
 {
   "name": "backon.css",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "A moderm CSS reset",
   "scripts": {
     "start":"npm run build",
@@ -8,11 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cmp-cc/backon.git"
+    "url": "https://github.com/cmp-cc/backon.git"
   },
   "keywords": [
     "css",
-    "reset"
+    "reset",
+    "less",
+    "sass",
+    "postcss",
+    "webpack"
   ],
   "author": "cmp-cc",
   "license": "MIT",

@@ -1,3 +1,10 @@
+## [v1.5.4]
+**Support LESS and SASS**
+```
+// LESS/SASS
+@import '~backon.css/dist/backon.min';
+```
+
 ## [v1.5.3]
 ### Add
 * before
