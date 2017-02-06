@@ -1,6 +1,5 @@
 ## [v1.5.4]
-**Support LESS and SASS**
-**Support for preprocessors(Sass, Less, Stylus) postfix **
+**Support for preprocessors(Sass, Less, Stylus) postfix**
 ```
 // LESS/SASS/Stylus
 @import '~backon.css/dist/backon.min';

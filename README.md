@@ -19,6 +19,9 @@ import 'backon.css/dist/backon.min.css'
 // or require
 require('backon.css/dist/backon.min.css')
 
+// or use preprocessors(Sass, Less, Stylus) import
+@import '~backon.css/dist/backon.min.css';
+
 ```
 
 **or**
