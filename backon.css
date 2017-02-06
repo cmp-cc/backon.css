@@ -9,7 +9,7 @@
  * 2. 修复盒模型缺陷
  * 3. 防止在 Window Phone(IE) 和 IOS 横屏字号变化. [竖屏14px, 横屏变化为20px, text-size-adjust:100% 统一字体大小]
                    https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
- * 4. 修复IE10 滚动条悬浮问题 [滚动条不占用边距]
+ * 4. 修复IE 10~11 滚动条悬浮问题 [滚动条不占用边距]
              info: http://stackoverflow.com/questions/17045132/scrollbar-overlay-in-ie10-how-do-you-stop-that?noredirect=1&lq=1
  * 5. iphone/android 点击链接时，出现闪烁粉色颜色bug
  */
