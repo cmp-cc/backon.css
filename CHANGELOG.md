@@ -1,3 +1,32 @@
+## [v1.5.3]
+### Add
+* before
+```
+html {
+  font-family: arial,sans-serif;     /* 1 */
+  -moz-box-sizing: border-box;       /* 2 */
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-text-size-adjust: 100%;        /* 3 */
+  -webkit-text-size-adjust: 100%;    /* 3 */
+  -ms-overflow-style: scrollbar;     /* 4 */
+  -webkit-tap-highlight-color: transparent; /* 5 */
+}
+```
+* before
+```
+html {
+  font-family: arial,sans-serif;     /* 1 */
+  -moz-box-sizing: border-box;       /* 2 */
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -ms-text-size-adjust: 100%;        /* 3 */
+  -webkit-text-size-adjust: 100%;    /* 3 */
++ overflow-y: scroll;                /* 4 , 修正Chrome/Firefox 默认不显示滚动条, 导致页面切换异常问题 */
+  -ms-overflow-style: scrollbar;     /* 5 */
+  -webkit-tap-highlight-color: transparent; /* 6 */
+}
+```
 ## [v1.5.2]
 ### Add
 * before

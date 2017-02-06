@@ -1,4 +1,4 @@
-﻿/*! backon.css v1.5.2 | MIT License | https://github.com/cmp-cc/backon.css | 基于 normalize.css */
+﻿/*! backon.css v1.5.3 | MIT License | https://github.com/cmp-cc/backon.css | 基于 normalize.css */
 
 /* Document
    ========================================================================== */
@@ -6,22 +6,29 @@
 /**
  * 1. 字体采用系统默认字体. [平台兼容优先, 省流量, 自行覆盖. arial 具备更好的广泛性和通用性]
  *       候选字体: font-family: "Helvetica Neue", Helvetica, arial, sans-serif ; Helvetica 字体设计质量优于 arial
- * 2. 修复盒模型缺陷
- * 3. 防止在 Window Phone(IE) 和 IOS 横屏字号变化. [竖屏14px, 横屏变化为20px, text-size-adjust:100% 统一字体大小]
-                   https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
- * 4. 修复IE 10~11 滚动条悬浮问题 [滚动条不占用边距]
-             info: http://stackoverflow.com/questions/17045132/scrollbar-overlay-in-ie10-how-do-you-stop-that?noredirect=1&lq=1
- * 5. iphone/android 点击链接时，出现闪烁粉色颜色bug
+ * 2. 修正盒模型缺陷. [ content(width/height) + padding + border =  actual rendered width/height ]
+                可参考：
+                   https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+                   https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+                   http://blog.teamtreehouse.com/box-sizing-secret-simple-css-layouts#comment-50223
+ * 3. 防止在 Window Phone(IE) 和 IOS 横屏字号变化. [竖屏14px, 横屏变化为20px问题]
+                https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
+ * 4. 修正 Chrome/Firefox 内容高度 小于 页面高度时, 不显示滚动条。[导致页面切换时, 显示异常]
+               演示: http://output.jsbin.com/fofocib
+ * 5. 修正 IE 10~11 滚动条悬浮问题 [滚动条不占用边距]
+               info: http://stackoverflow.com/questions/17045132/scrollbar-overlay-in-ie10-how-do-you-stop-that?noredirect=1&lq=1
+ * 6. iphone/android 点击链接时，出现闪烁粉色颜色bug
  */
 html {
   font-family: arial,sans-serif;     /* 1 */
   -moz-box-sizing: border-box;       /* 2 */
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -ms-text-size-adjust: 100%;      /* 3 */
-  -webkit-text-size-adjust: 100%;  /* 3 */
-  -ms-overflow-style: scrollbar;   /* 4 */
-  -webkit-tap-highlight-color: transparent; /* 5 */
+  -ms-text-size-adjust: 100%;        /* 3 */
+  -webkit-text-size-adjust: 100%;    /* 3 */
+  overflow-y: scroll;                /* 4 */
+  -ms-overflow-style: scrollbar;     /* 5 */
+  -webkit-tap-highlight-color: transparent; /* 6 */
 }
 
 *, *::before, *::after {           /* 2 * 添加前置或后置元素，请使用`伪元素`而非`伪类`. */
@@ -165,7 +172,7 @@ hr::after {
 
 /**
  * 1. 移除 IE 10 点击链接时的灰色背景 (统一默认透明)
- * 2. 修复 IOS 8+ 和 Safari 8+ 显示为下划线 [默认为：空白间隔下划线]
+ * 2. 修正 IOS 8+ 和 Safari 8+ 显示为下划线 [默认为：空白间隔下划线]
  *         info: https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration-skip
  * 3. 移除 默认链接下划线
  */
@@ -257,7 +264,7 @@ code, kbd, samp, pre {
 
 code {
   color: #bd4147;
-  background-color: #eff0f1
+  background-color: #eff0f1;
 }
 
 kbd {
@@ -346,7 +353,7 @@ audio:not([controls]) {
  * 3. 修正 IE8 图片消失bug [设置max-width:100%, ie8 下图片消失了？]
  *        演示： http://www.456bereastreet.com/lab/img-max-width/
  * 4. 确保不指定[height] 保持等比缩放 [避免只指定width 导致图片变形]
- * 5. 去除图片底部空隙 [ IE 8以下出现，现代浏览器都已修复, next update delete, backon.css support ie8+]
+ * 5. 去除图片底部空隙 [ IE 8以下出现，现代浏览器都已修正, next update delete, backon.css support ie8+]
  */
 img {
   border-style: none; /* 1 */
@@ -577,7 +584,7 @@ select:disabled option:checked, option:disabled:checked {
 /**
 *
 * 1. 重置并统一浏览器样式，确保不同平台下浏览器展示效果一致
-* 2. 修复常见的浏览器 bugs
+* 2. 修正常见的浏览器 bugs
 * 3. 考虑响应式、移动设备，并确保向后兼容
 * 4. 尽可能详细的注释说明
 
