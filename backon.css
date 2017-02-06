@@ -509,12 +509,12 @@ fieldset {
 
 /**
  * 1. 修正 Edge,IE,Firefox 文本包裹问题.
- * 2. 修正 `fieldset` 元素 颜色继承,行高继承问题 [IE 6-9 中颜色不继承]
+ * 2. 修正 `legend` 元素 颜色继承,行高继承问题 [IE 6-9 中颜色不继承]
  * 3. 清除默认填充
  */
 legend {
   display: table; /* 1 */
-  max-width: 100%; /* 1 * or or width: 100%; */
+  max-width: 100%; /* 1 * or width: 100%; */
   white-space: normal; /* 1 [中文字体不换行问题] */
   color: inherit; /* 2 */
   line-height: inherit; /* 2 */
