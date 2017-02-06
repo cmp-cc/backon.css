@@ -13,11 +13,19 @@
 ```sh
 npm install backon.css --save
 
+// webpack , browserify or require
+import 'backon.css/dist/backon.min.css'
+// node require
+require('backon.css/dist/backon.min.css')
+
 ```
 
 **or**
 
 download [backon.min.css](https://raw.githubusercontent.com/cmp-cc/backon.css/master/dist/backon.min.css)
+```
+<link rel="stylesheet" href="libs/backon.min.css">
+```
 
 ## Features
 * 重置并统一浏览器样式，确保不同平台下浏览器显示效果一致
