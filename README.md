@@ -15,7 +15,8 @@ npm install backon.css --save
 
 // webpack , browserify or require
 import 'backon.css/dist/backon.min.css'
-// node require
+
+// or node require
 require('backon.css/dist/backon.min.css')
 
 ```
