@@ -308,7 +308,7 @@ sub, sup {
   font-size: 75%;           /*  Specified in % so that the sup/sup is the right size relative to the surrounding text */
   line-height: 0;           /*  Zero out the line-height so that it doesn't interfere with the positioning that follows */
   position: relative;       /*  Where the magic happens: makes all browsers position the sup/sup properly, relative to the surrounding text */
-  vertical-align: baseline; /*  Note that if you're using Eric Meyer's reset.css, this is already set and you can remove this rule */
+  vertical-align: baseline; /*  set vertical-align attribute */
 }
 
 sub {
