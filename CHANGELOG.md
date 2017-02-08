@@ -1,3 +1,23 @@
+## [v.1.5.5]
+## Add
+```
+body {
+  ...                                /* 1 */
+
++ -webkit-overflow-scrolling: touch; /* 2 , 修正IOS 6+ 浏览器不支持触摸滑动 */
+}
+```
+**候选**
+```
+@media screen and (max-width: 768px) {
+     body{
+        -webkit-overflow-scrolling: touch;
+     }
+}
+```
+**IOS `-webkit-overflow-scrolling: touch` 采用系统控件渲染[创建`UIWebOverflowScrollView`渲染容器],因为使用硬件加速的系统级控件,拥有更高效率,但消耗额外的内存**
+
+
 ## [v1.5.4]
 **Support for preprocessors(Sass, Less, Stylus) postfix**
 ```

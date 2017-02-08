@@ -1,4 +1,4 @@
-﻿/*! backon.css v1.5.4 | MIT License | github.com/cmp-cc/backon.css | 基于 normalize.css */
+﻿/*! backon.css v1.5.5 | MIT License | github.com/cmp-cc/backon.css | 基于 normalize.css */
 
 /* Document
    ========================================================================== */
@@ -39,14 +39,16 @@ html {
    ========================================================================== */
 
 /**
-* 1. 统一基础样式     [自行覆盖]
+*  1. 统一基础样式     [自行覆盖]
+*  2. 修正 IOS 系统无法触摸滑动 [IOS 5.0+ browser]
 */
 body {
   margin: 0;             /*  边距 */
   font-size: 14px;       /*  字号 */
-  line-height: 1.5;      /*  行高 ,   字段行高最佳在1.4 <= line-height < 1.55, 浏览器默认行高为 1.15 */
+  line-height: 1.5;      /*  行高 ,   字段行高最佳在1.4 <= line-height < 1.55 */
   color: #333;           /*  颜色 */
   background-color: #fff;/*  背景 */
+  -webkit-overflow-scrolling: touch; /* 2 */
 }
 
 /**
