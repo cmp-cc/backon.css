@@ -4,7 +4,8 @@
 body {
   ...                                /* 1 */
 
-+ -webkit-overflow-scrolling: touch; /* 2 , 修正IOS 6+ 浏览器不支持触摸滑动 */
+ -webkit-overflow-scrolling: touch; /* 2 , 修正IOS 6+ 浏览器不支持触摸滑动 */
+
 }
 ```
 **候选**
@@ -52,7 +53,7 @@ html {
   box-sizing: border-box;
   -ms-text-size-adjust: 100%;        /* 3 */
   -webkit-text-size-adjust: 100%;    /* 3 */
-+ overflow-y: scroll;                /* 4 , 修正Chrome/Firefox 默认不显示滚动条, 导致页面切换异常问题 */
+  overflow-y: scroll;                /* 4 , 修正Chrome/Firefox 默认不显示滚动条, 导致页面切换异常问题 */
   -ms-overflow-style: scrollbar;     /* 5 */
   -webkit-tap-highlight-color: transparent; /* 6 */
 }
