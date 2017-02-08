@@ -10,7 +10,7 @@ body {
 ```
 **候选**
 ```
-@media all and (max-width: 768px) {
+@media screen and (max-width: 768px) {
      body{
         -webkit-overflow-scrolling: touch;
      }
