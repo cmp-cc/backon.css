@@ -22,7 +22,8 @@ img {
   vertical-align: bottom; /* 5 */
 }
 ```
-**现代浏览器`img` 保持图片等比缩放,` height: auto;` 不是必需品。**
+**现代浏览器均支持图片等比缩放,` height: auto;` 不是必需品。**
+
 **移除[v1.5.4] 更新, 预处理器(Sass/Less/Stylus) 后缀文件不是必需品。 请使用如下替代**
 ```
 @import '~backon.css/dist/backon.min.css';
