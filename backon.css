@@ -45,7 +45,7 @@ html {
 body {
   margin: 0;             /*  边距 */
   font-size: 14px;       /*  字号 */
-  line-height: 1.5;      /*  行高 ,   字段行高最佳在1.4 <= line-height < 1.55 */
+  line-height: 1.5;      /*  行高 ,   字段行高最佳在1.4 <= line-height <= 1.8 */
   color: #333;           /*  颜色 */
   background-color: #fff;/*  背景 */
   -webkit-overflow-scrolling: touch; /* 2 */
