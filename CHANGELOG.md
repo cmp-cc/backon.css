@@ -1,3 +1,32 @@
+## [v1.5.6]
+## Remove
+* before
+```
+/**
+ * 4. 确保不指定[height] 保持等比缩放 [避免只指定width 导致图片变形]
+ */
+img {
+  border-style: none; /* 1 */
+  max-width: 100%; /* 2 */
+  width: auto\9;   /* 3 * \9 是 Css hack， 它表示只作用于 Internet Explorer 7 - 9 */
+  height: auto;    /* 4 */
+  vertical-align: bottom; /* 5 */
+}
+```
+* after
+```
+img {
+  border-style: none; /* 1 */
+  max-width: 100%; /* 2 */
+  width: auto\9;   /* 3 * \9 是 Css hack， 它表示只作用于 Internet Explorer 7 - 9 */
+  vertical-align: bottom; /* 5 */
+}
+```
+**现代浏览器`img` 保持图片等比缩放,` height: auto;` 不是必需品。**
+**移除[v1.5.4] 更新, 预处理器(Sass/Less/Stylus) 后缀文件不是必需品。 请使用如下替代**
+```
+@import '~backon.css/dist/backon.min.css';
+```
 ## [v.1.5.5]
 ## Add
 ```
@@ -10,16 +39,16 @@ body {
 ```
 **候选**
 ```
-@media screen and (max-width: 768px) {
-     body{
+@media only screen and (max-device-width: 768px){
+    body{
         -webkit-overflow-scrolling: touch;
-     }
+    }
 }
 ```
 **IOS `-webkit-overflow-scrolling: touch` 采用系统控件渲染[创建`UIWebOverflowScrollView`渲染容器],因为使用硬件加速的系统级控件,拥有更高效率,但消耗额外的内存**
 
 
-## [v1.5.4]
+## <del>[v1.5.4]</del>
 **Support for preprocessors(Sass, Less, Stylus) postfix**
 ```
 // LESS/SASS/Stylus

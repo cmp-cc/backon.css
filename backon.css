@@ -1,4 +1,4 @@
-﻿/*! backon.css v1.5.5 | MIT License | github.com/cmp-cc/backon.css | 基于 normalize.css */
+﻿/*! backon.css v1.5.6 | MIT License | github.com/cmp-cc/backon.css | 基于 normalize.css */
 
 /* Document
    ========================================================================== */
@@ -353,15 +353,13 @@ audio:not([controls]) {
  * 2. 支持响应式 [自适应]
  * 3. 修正 IE8 图片消失bug [设置max-width:100%, ie8 下图片消失了？]
  *        演示： http://www.456bereastreet.com/lab/img-max-width/
- * 4. 确保不指定[height] 保持等比缩放 [避免只指定width 导致图片变形]
- * 5. 去除图片底部空隙 [ IE 8以下出现，现代浏览器都已修正, next update delete, backon.css support ie8+]
+ * 4. 去除图片底部空隙 [ IE8 以下出现，现代浏览器都已修正, next update delete, backon.css support ie8+]
  */
 img {
   border-style: none; /* 1 */
   max-width: 100%; /* 2 */
   width: auto\9;   /* 3 * \9 是 Css hack， 它表示只作用于 Internet Explorer 7 - 9 */
-  height: auto;    /* 4 */
-  vertical-align: bottom; /* 5 */
+  vertical-align: bottom; /* 4 */
 }
 
 /**
@@ -583,13 +581,15 @@ select:disabled option:checked, option:disabled:checked {
 }
 
 /**
-*
+
+> backon.css
+
 * 1. 重置并统一浏览器样式，确保不同平台下浏览器展示效果一致
 * 2. 修正常见的浏览器 bugs
 * 3. 考虑响应式、移动设备，并确保向后兼容
 * 4. 尽可能详细的注释说明
 
-backon.css 不建议使用的标签元素
+> backon.css 不建议使用的标签元素
 
 * applet
 * basefont
@@ -608,5 +608,14 @@ backon.css 不建议使用的标签元素
 * strike
 * u
 * xmp
+
+> 请保持一个良好的`Css优先级`开发习惯,避免使用`属性样式`。[`属性样式` 不会纳入`Css style list`, 拥有最低优先级]
+
+eg：
+ <img src="backon-logo.png" width="100px" height="100px">        // 不推荐
+ 
+ <img src="backon-logo.png" style="width:100px; height:100px">   // 推荐, 最好使用外联样式
+ 
+
 */
 
