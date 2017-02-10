@@ -609,13 +609,13 @@ select:disabled option:checked, option:disabled:checked {
 * u
 * xmp
 
-> 请保持一个良好的`Css优先级`开发习惯,避免使用`属性样式`。[`属性样式` 不会纳入`Css style list`, 拥有最低优先级]
+> 请保持一个良好的`Css优先级`开发习惯,避免使用`属性样式`。[`属性样式` 不会纳入`Css style list`, 拥有最低优先级. 避免未知的属性覆盖]
 
 eg：
  <img src="backon-logo.png" width="100px" height="100px">        // 不推荐
  
  <img src="backon-logo.png" style="width:100px; height:100px">   // 推荐, 最好使用外联样式
  
-
+提示： 一些特殊的场景下，我们需要使用到`属性样式`的特点`最低优先级` 来满足我们的业务需求。
 */
 
