@@ -1,12 +1,12 @@
-.left {
-  float: left
+.float-left {
+  float: left !important;
 }
 
-.right {
-  float: right
+.float-right {
+  float: right !important;
 }
 
-.center {
+.center-block {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -16,12 +16,16 @@
   overflow: hidden
 }
 
+.invisible {
+  visibility: hidden
+}
+
 .hide {
-  display: none
+  display: none !important;
 }
 
 .show {
-  display: block;
+  display: block !important;
 }
 
 .inline {
@@ -32,6 +36,14 @@
   display: block
 }
 
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0
+}
+
 .min-z-index {
   z-index: -1;
 }
@@ -40,9 +52,6 @@
   z-index: 999;
 }
 
-/*
-* 清除浮动
-*/
 .clearfix::after {
   display: block;
   content: '';
