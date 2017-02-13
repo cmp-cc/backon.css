@@ -12,6 +12,7 @@
   margin-right: auto;
 }
 
+
 .overflow {
   overflow: hidden
 }
@@ -26,6 +27,10 @@
 
 .show {
   display: block !important;
+}
+
+.affix {
+  position: fixed;
 }
 
 .text-hide {
@@ -50,6 +55,17 @@
   clear: both;
 }
 
+.text-right{
+  text-align: right !important;
+}
+
+.text-left{
+  text-align: left !important;
+}
+
+.text-center{
+  text-align: center !important;
+}
 /*
 * 自动换行
 */
