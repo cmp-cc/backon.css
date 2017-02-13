@@ -28,14 +28,6 @@
   display: block !important;
 }
 
-.inline {
-  display: inline
-}
-
-.inline-block {
-  display: block
-}
-
 .text-hide {
   font: 0/0 a;
   color: transparent;
