@@ -1,4 +1,4 @@
-﻿/*! backon.css v1.5.6 | MIT License | github.com/cmp-cc/backon.css | 基于 normalize.css */
+﻿/*! backon.css v1.5.7 | MIT License | github.com/cmp-cc/backon.css | 基于 normalize.css */
 
 /* Document
    ========================================================================== */
@@ -172,15 +172,17 @@ hr::after {
    ========================================================================== */
 
 /**
- * 1. 移除 IE 10 点击链接时的灰色背景 (统一默认透明)
- * 2. 修正 IOS 8+ 和 Safari 8+ 显示为下划线 [默认为：空白间隔下划线]
+ * 1. 统一字体颜色。 [ 统一为IE默认字色,在浏览器`user agent stylesheet`中也只有IE设置color ]
+ * 2. 移除 IE 10 点击链接时的灰色背景 (统一默认透明)
+ * 3. 修正 IOS 8+ 和 Safari 8+ 显示为下划线 [默认为：空白间隔下划线]
  *         info: https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration-skip
- * 3. 移除 默认链接下划线
+ * 4. 移除 默认链接下划线
  */
 a {
-  background-color: transparent; /* 1 */
-  -webkit-text-decoration-skip: objects; /* 2 */
-  text-decoration: none; /* 3 */
+  color: #06c;  /* 1 */
+  background-color: transparent; /* 2 */
+  -webkit-text-decoration-skip: objects; /* 3 */
+  text-decoration: none; /* 4 */
 }
 
 /**
@@ -201,7 +203,7 @@ a:hover {
 */
 a:not([href]):focus, a:not([href]):hover {
   color: inherit;
-  outline: 0;
+  outline-width: 0;
 }
 
 /**

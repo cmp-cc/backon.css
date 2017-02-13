@@ -1,3 +1,11 @@
+## [v1.5.7]
+* add
+```
+a {
+  color: #06c;  /* 1, 统一字体颜色。 [ 统一为IE默认字色,在浏览器`user agent stylesheet`中也只有IE设置color ] */
+}
+```
+**`a tag color` 默认是不继承的, 浏览器显示差异比较大,这里统一为IE 默认, 同样也是最为合适的字色**
 ## [v1.5.6]
 ### Remove
 * before
