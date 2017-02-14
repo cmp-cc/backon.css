@@ -41,11 +41,11 @@
 }
 
 .min-z-index {
-  z-index: -1;
+  z-index: -1 !important;
 }
 
 .max-z-index {
-  z-index: 999;
+  z-index: 999 !important;
 }
 
 .clearfix::after {
