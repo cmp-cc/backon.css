@@ -65,30 +65,14 @@
 .text-center{
   text-align: center !important;
 }
-/*
-* 自动换行
-*/
+
 .wordwrap {
   word-break: break-all;
   word-wrap: break-word
 }
 
-/*
-* 单行省略号
-*/
 .single-row-point {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/*
-* 多行省略号 [ -webkit-line-clamp: 2~n ]
-*/
-/*
-.multi-row-point {
-  overflow : hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
-*/
