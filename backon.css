@@ -12,7 +12,7 @@
                    https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
  * 3. 防止在 Window Phone(IE) 和 IOS 横屏字号变化. [竖屏14px, 横屏变化为20px问题]
                 https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
- * 4. 修正 Chrome/Firefox 内容高度 小于 页面高度时, 不显示滚动条。[导致页面切换时, 显示异常]
+ * 4. 修正 浏览器 内容高度 小于 页面高度时, 不显示滚动条。[导致页面切换时, 显示异常]
                演示: http://output.jsbin.com/fofocib
  * 5. 修正 IE 10~11 滚动条悬浮问题 [滚动条不占用边距]
                info: http://stackoverflow.com/questions/17045132/scrollbar-overlay-in-ie10-how-do-you-stop-that?noredirect=1&lq=1
