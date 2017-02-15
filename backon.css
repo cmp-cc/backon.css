@@ -70,7 +70,6 @@ h1 {
 
 h2 {
   font-size: 30px;
-  
 }
 
 h3 {
@@ -88,6 +87,28 @@ h5 {
 h6 {
   font-size: 12px;
 }
+
+@media (max-width: 768px) {
+  
+  h1 {
+    font-size: 28px;
+  }
+  
+  h2 {
+    font-size: 24px;
+  }
+  
+  h3 {
+    font-size: 20px;
+  }
+  
+  h4 {
+    font-size: 16px;
+  }
+}
+
+
+
 
 dd {
   margin-left: 0;
