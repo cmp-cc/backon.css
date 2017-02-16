@@ -1,6 +1,6 @@
 {
   "name": "backon.css",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "description": "A moderm CSS reset",
   "scripts": {
     "start":"npm run build",

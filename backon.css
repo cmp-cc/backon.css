@@ -1,4 +1,4 @@
-﻿/*! backon.css v1.5.7 | MIT License | github.com/cmp-cc/backon.css | 基于 normalize.css */
+﻿/*! backon.css v1.5.8 | MIT License | github.com/cmp-cc/backon.css | 基于 normalize.css */
 
 /* Document
    ========================================================================== */
@@ -41,6 +41,8 @@ html {
 /**
 *  1. 统一基础样式     [自行覆盖]
 *  2. 修正 IOS 系统无法触摸滑动 [IOS 5.0+ browser]
+*  3. 允许单词换行    [ 避免因长单词不换行导致浏览器宽度拉伸, 导致 浏览器宽度 > 100% ]
+*       演示：http://output.jsbin.com/xinopeloxe
 */
 body {
   margin: 0;             /*  边距 */
@@ -49,6 +51,7 @@ body {
   color: #333;           /*  颜色 */
   background-color: #fff;/*  背景 */
   -webkit-overflow-scrolling: touch; /* 2 */
+  word-wrap: break-word;
 }
 
 /**
