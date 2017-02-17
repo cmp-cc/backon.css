@@ -51,7 +51,7 @@ body {
   color: #333;           /*  颜色 */
   background-color: #fff;/*  背景 */
   -webkit-overflow-scrolling: touch; /* 2 */
-  word-wrap: break-word;
+  word-wrap: break-word; /* 3 */
 }
 
 /**
