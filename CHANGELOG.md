@@ -5,7 +5,7 @@ body {
     word-wrap: break-word; /* 允许单词换行    [ 避免因长单词不换行导致浏览器宽度拉伸, 导致 浏览器宽度 > 100% ] */
 }
 ```
-**演示：http://output.jsbin.com/xinopeloxe**
+**演示：http://output.jsbin.com/kowiraqide**
 
 ## [v1.5.7]
 * add
