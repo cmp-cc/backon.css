@@ -1,0 +1,258 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  cursor: default;
+}
+
+body, figure, blockquote, button, input, optgroup, select, textarea, fieldset {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  color: inherit;
+  font-family: inherit;
+}
+
+dd {
+  margin-left: 0;
+}
+
+menu {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p, pre, dl {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+td, th, fieldset, input, textarea {
+  padding: 0;
+}
+/*
+
+td, th {
+  padding: 0;
+  text-align: left;  !* 统一默认左对齐 *!
+}
+*/
+
+
+legend {
+  padding-left: 0;
+}
+
+ul, ol {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+article, aside, footer, header, nav, section,
+figcaption, figure, main, menu, details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+/**
+ * 1. 修正 IE template 元素不可见.       [ template 模板标签, 应用于HTML 模板页面开发, 通过JS渲染，不显示于页面 ]
+ * 2. 修正 IE 10 以下 [hidden] 为不可见
+ */
+template /* 1 */,[hidden] /* 2 */ {
+  display: none;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+sup {
+  top: -.5em;
+}
+
+
+/**
+*  取消默认下划线 [ ins 表示修正，一般配合 del 使用. 请自定义修正样式 ]
+*/
+ins {
+  text-decoration: none;
+}
+
+
+/**
+ * Android 4.3 以下添加正确的样式.    [ 默认斜体 ]
+ */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * 防止 Safari 6 重复规则 `bolder`
+ */
+b, strong {
+  font-weight: inherit;
+}
+
+/**
+ * 添加正确的字体 Chrome, Edge, and Safari.
+ */
+b, strong, dt/* dt 表示列表项,真实语义为粗体 */ {
+  font-weight: 600;
+}
+
+/**
+ * 1. 移除 Firefox 39 以下底部边框
+ * 2. 移除下划线修饰 [ 请自定义修饰符，或 语义样式 ]
+ *
+ * info: https://bugs.chromium.org/p/chromium/issues/detail?id=480213
+ */
+abbr {
+  border-bottom: none; /* 1 */
+  text-decoration: none; /* 2 */
+}
+
+/**
+ * 1. 修正字体显示与缩放。 [ 系统字体优先 ]
+ * 2. 确保所有浏览器字体显示正常 [ 通过`em`等比 ]
+ * 3. 统一样式显示
+ */
+code, kbd, samp, pre {
+  font-family: Consolas /* window */ , "Liberation Mono" /*window */,  Menlo /* mac*/ , Monaco/* mac */, Courier New /* win7 */, monospace;
+  font-size: 1em; /* 2 */
+}
+
+kbd {
+  padding: 0;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+/**
+ * 不使用[%、em、rem ] 重置small 原因如下：
+ *   1. 当html/body设置字号小于15px时, `small` 取值[80%/.8em/.8rem] 导致 chrome 与 其他浏览器字号显示不一致。
+ *                    chrome 最小字体为12px.
+ *   2.中文字号小于12 不易阅读
+ */
+small {
+  font-size: 12px;
+}
+
+
+
+/**
+* 取消默认嵌套引用
+*/
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+}
+
+
+
+
+/**
+* 合并单元格边框，重置内边距, 默认透明背景
+*/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: transparent;
+}
+
+/**
+*  1. 取消列表样式 [ 请单独设置 ]
+*  2. 清除边距
+*/
+ul, ol {
+  list-style-type: none; /* 1 */
+  padding-left: 0;  /* 2 */
+  margin-top: 0;    /* 2 */
+  margin-bottom: 0; /* 2 */
+}
+
+/**
+ * 1. 修正浏览器中字体不继承问题  [ 说明: `input`,`textarea` 默认是不继承字体颜色, 请在实际项目中定义 ]
+ * 2. 移除 Firefox 和 Safari 默认外边距.
+ */
+button, input, optgroup, select, textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 , [ IE11设置 input{line-height: inherit;} 无效, 这里统一正确的行高 ] */
+  margin: 0; /* 2 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* other */
+button {
+  width: auto;   /* 文本保持居中对齐 */
+  overflow: visible;
+}
+
+input[type="file"] {
+   display: block;  /* 清除左边距 */
+}
+
+
+/**
+* label 元素赋予手型光标,inline-block
+*/
+label {
+  cursor: pointer;
+  display: inline-block;
+}
+
+
+/**
+ * 定义一致的边框、外边距和内边距
+ */
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}

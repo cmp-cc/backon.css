@@ -1,0 +1,77 @@
+html {
+  box-sizing: border-box;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+
+/*  修正 IOS 系统无法触摸滑动 [IOS 5.0+ browser] */
+body {
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+/* IOS，input/textarea 默认会有个内阴影，严重影响美观。 [ 清除 IOS input/textarea 内阴影 ] */
+/* Remove inner shadow from inputs on mobile iOS */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"]
+textarea {
+  -webkit-appearance: none;
+  /* 移除灰色高亮 */
+  /*-webkit-tap-highlight-color: rgba(0,0,0,0);   remove the grey highlight that occurs when you touch an element.*/
+}
+
+pre {
+  color: inherit;
+  background-color: transparent;
+}
+
+/**
+ * 修正 IOS 4-7 display 样式. [ 没有controls属性时,元素显示出来 ]
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * 修正 IE9 [overflow] 异常
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/**
+ * 1. 避免 WebKit bug 破坏原生的 `audio` 和 `video`的控制器  [ 出现在Android 4.0.* ]
+ * 2. 修正在IOS 和 Safari「input」 无法点击问题  [ 不可点击的样式类型 ]
+ * 3. 统一点击类型「input」为光标样式 [ 默认为 : default ]
+ */
+button, html [type="button"], /* 1 */
+[type="reset"], [type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+
+/**
+ * 3. 清除默认填充
+ */
+legend {
+  padding: 0;
+}
+
+/**
+ * 1. 修正在IOS 和 Safari 无法点击问题  [ 不可点击的样式类型 ]
+ * 2. 修正 Safari 字体 `inherit`
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}

@@ -1,0 +1,10 @@
+/*要去掉按下的阴影盒子可以下面的属性：  ios 阴影*/
+input, textarea, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden
+}

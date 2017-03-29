@@ -1,0 +1,145 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline
+}
+
+* {
+  box-sizing: border-box
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block
+}
+
+blockquote, q {
+  quotes: none
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none
+}
+
+del {
+  text-decoration: line-through
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #c8ccd0;
+  margin: 1em 0;
+  padding: 0
+}
+
+input, select {
+  vertical-align: middle
+}
+
+pre, code, kbd, samp {
+  font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, sans-serif
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%
+}
+
+a:hover, a:active {
+  outline: none
+}
+
+ul, ol {
+  margin-left: 2em
+}
+
+ol {
+  list-style-type: decimal
+}
+
+small {
+  font-size: 85%
+}
+
+strong, th, b {
+  font-weight: bold
+}
+
+td {
+  vertical-align: top
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 1;
+  position: relative
+}
+
+sup {
+  top: -0.5em
+}
+
+sub {
+  bottom: -0.25em
+}
+
+p {
+  margin-bottom: 1em
+}
+
+pre {
+  word-wrap: normal;
+  padding: 10px
+}
+
+pre b, pre strong {
+  font-weight: bold
+}
+
+input[type="radio"] {
+  vertical-align: middle
+}
+
+input[type="checkbox"] {
+  vertical-align: middle
+}
+
+label, input[type="button"], input[type="submit"], .button, a.button:link, a.button:visited, input[type="image"], button {
+  cursor: pointer
+}
+
+button, input, select, textarea {
+  margin: 0
+}
+
+button {
+  width: auto;
+  overflow: visible
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold
+}
+
+em {
+  color: #0C0D0E
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: #07C
+}
+
+a, a > em {
+  color: #07C
+}
