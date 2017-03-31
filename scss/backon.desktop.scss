@@ -1,33 +1,10 @@
-/*
- *  desktop: 只针对于 desktop web 程序开发。
- *
-*/
 html {
-  box-sizing: border-box;
-  overflow-y: scroll;
-  -ms-overflow-style: scrollbar;
+  overflow-y: scroll; /* 修正 浏览器内容高度 小于 页面高度时, 不显示滚动条。[导致页面切换时, 显示异常] */
+  -ms-overflow-style: scrollbar; /* 修正 IE 10~11 滚动条悬浮问题  */
 }
 
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-
-body {
-  margin: 0;
-  height: 100%;
-}
-
-/**
-  避免意外
-*/
-
-body {
-  /* 允许单词换行 [ 避免因单词过长,出现字体跨屏 ]*/
-  word-wrap: break-word;
-
-  /* 显示Y轴 [ 避免页面切换时, 显示异常 ] */
-  overflow-y: scroll;
+a {
+  background-color: transparent; /* 移除 IE 10 点击链接时灰色背景 [统一默认透明] */
 }
 
 
@@ -39,46 +16,40 @@ abbr[title], acronym[title] , dfn[title] {
 }
 
 
-/**
- * 1. ie 8 max-height　异常
- *      info: http://stackoverflow.com/questions/7707/ie8-overflowauto-with-max-height/881597#881597
- */
 pre {
-  overflow: auto;   /* 1 or [ max-height: none\9 ] */
-  color: inherit;
-  background-color: transparent;
+  /* ie 8 max-height　异常
+     info :   http://stackoverflow.com/questions/7707/ie8-overflowauto-with-max-height/881597#881597
+   */
+  overflow: auto; /* or [ max-height: none\9 ] */
 }
 
-/**
- * 修正IE 9 以下 display 不为 inline-block.
- */
-audio, video ,canvas, output{
-  display: inline-block;
-}
 
-/**
- * 1. 修正 IE 9 以下 display 样式 [未定义元素默认为 inline-block]
- * 2. 修正垂直对齐 [Chrome, Firefox, and Opera 默认值不一致]
- */
+/* 修正垂直对齐 [Chrome, Firefox, and Opera 默认值不一致] */
 progress {
-  display: inline-block; /* 1 */
-  vertical-align: baseline; /* 2 */
+  vertical-align: baseline
 }
 
-
+img {
+  border-style: none; /* 移除 IE10 以下默认边框 */
+  width: auto\9;      /* 修正 IE8 图片消失bug [设置max-width:100%, ie8 下图片消失了？]
+                         演示： http://www.456bereastreet.com/lab/img-max-width
+                         [\9 是 Css hack， 它表示只作用于 Internet Explorer 7 - 9] */
+  vertical-align: bottom; /* 去除图片底部空隙 [ IE8 以下出现，现代浏览器都已修正 ]  */
+}
 
 /**
- * 1. 移除 IE10 以下默认边框
- * 2. 支持响应式 [自适应]
- * 3. 修正 IE8 图片消失bug [设置max-width:100%, ie8 下图片消失了？]
- *        演示： http://www.456bereastreet.com/lab/img-max-width/
- * 4. 去除图片底部空隙 [ IE8 以下出现，现代浏览器都已修正, next update delete, backon.css support ie8+]
+ * 修正 IE9 [overflow] 异常
  */
-img {
-  border-style: none; /* 1 */
-  max-width: 100%; /* 2 */
-  width: auto\9;   /* 3 * \9 是 Css hack， 它表示只作用于 Internet Explorer 7 - 9 */
-  vertical-align: bottom; /* 4 */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/**
+ * 1. 移除 IE 以下默认内边距 [IE 8-10]
+ * 2. 修正 box sizing [IE 8-10 为 content-box] [ global static default ]
+ */
+[type="checkbox"], [type="radio"] {
+  padding: 0; /* 1 */
 }
 
 /**
@@ -87,7 +58,6 @@ img {
 button, input { /* 1 */
   overflow: visible;
 }
-
 
 /**
  * 修正 button select text-transform 属性继承不一致    [IE 8-11、Firefox、Opera]
@@ -98,11 +68,10 @@ button, select { /* 1 */
   text-transform: none;
 }
 
-/**
- * 3. 统一点击类型「input」为光标样式 [ 默认为 : default ]
- */
-button, html [type="button"], /* 1 */
-[type="reset"], [type="submit"] {
+/*
+  统一点击类型光标
+*/
+button, html [type="button"], /* 1 */ [type="reset"], [type="submit"] {
   cursor: pointer; /* 3 */
 }
 
@@ -113,39 +82,6 @@ button[disabled], input[disabled] {
   cursor: default;
 }
 
-
-/*
-* radio/checkbox 不可选时，显示非法光标    (犹豫中 ....)
-*/
-/*
-input[type="radio"]:disabled,
-input[type="checkbox"]:disabled {
-  cursor: not-allowed;
-}
-*/
-
-/**
- * 移除 Firefox 3+ 的内外边距
- */
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-
-/**
- * 恢复聚焦样式规则
- */
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
 /**
 * 为可拖动元素添加拖动光标
 */
@@ -153,60 +89,17 @@ button:-moz-focusring,
   cursor: move;
 }
 
-/**
- * 1. 修正 Edge,IE,Firefox 文本包裹问题.
- * 2. 修正 `legend` 元素 颜色继承,行高继承问题 [IE 6-9 中颜色不继承]
- * 3. 清除默认填充
- */
 legend {
-  display: table; /* 1 */
-  max-width: 100%; /* 1 * or width: 100%; */
-  white-space: normal; /* 1 [中文字体不换行问题] */
-  color: inherit; /* 2 */
-  line-height: inherit; /* 2 */
-  padding: 0; /* 3 or padding-left: 0; */
+  display: table;  /*  修正 Edge,IE,Firefox 文本包裹问题.  */
+  max-width: 100%; /*  修正 Edge,IE,Firefox 文本包裹问题.  */
+  white-space: normal; /* 修正中文字体不换行问题 */
+  color: inherit; /* [IE 6-9 中颜色不继承] */
+  line-height: inherit; /* [IE 6-9 行高不继承] */
 }
 
-/**
- * 1. 移除 IE 默认垂直滚动条 [ IE 6-11 ]
- * 2. 禁止水平拖动 [ 防止破坏布局 ]
- */
 textarea {
-  overflow: auto;
-  resize: vertical;
-}
-
-/**
- * 1. 移除 IE 以下默认内边距 [IE 8-10]
- */
-[type="checkbox"], [type="radio"] {
-  padding: 0; /* 1 */
-}
-
-/**
- * 修正 Chrome 「cursor」 样式 [Correct the cursor style of increment and decrement buttons in Chrome]
- */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/**
- * 1. 修正 Safari, Chrome 的 appearance 属性被设置为 searchfield
- * 2. 修正 Safari 「outline」样式
- */
-[type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
-}
-
-/**
- * 1. 移除 macOS 中 Chrome 和 Safari 搜索框内边距
- * 2. 隐藏 macOS 中 Chrome 和 Safari 清除按钮
- */
-[type="search"]::-webkit-search-cancel-button, /* 1 */
-[type="search"]::-webkit-search-decoration  /* 2 */ {
-  -webkit-appearance: none;
+  overflow: auto; /* 移除 IE 默认垂直滚动条 [ IE 6-11 ] */
+  resize: vertical; /* ? 移除 IE 默认垂直滚动条 [ IE 6-11 ]*/
 }
 
 /**
@@ -215,3 +108,4 @@ textarea {
 select:disabled option:checked, option:disabled:checked {
   color: #d2d2d2;
 }
+

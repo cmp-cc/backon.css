@@ -1,32 +1,69 @@
+/* 文档
+  ===========================================================
+  1.
+  2.
+*/
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 html {
-  height: 100%;
+  font-family: sans-serif;  /* 使用系统默认字体 */
+  box-sizing: border-box;   /* 修正盒模型缺陷 */
+  height: 100%; /* ? */
 }
 
+
+/* 元素
+   ===========================================================
+   1. 清除边距
+   2. 重置基础样式
+   3. 兼容低版本浏览器
+*/
 body {
-  height: 100%;
-  cursor: default;
-}
-
-body, figure, blockquote, button, input, optgroup, select, textarea, fieldset {
   margin: 0;
+  font-size: 14px;       /*  字号 */
+  line-height: 1.5;      /*  行高 ,   字段行高最佳在1.4 <= line-height <= 1.8 */
+  color: #333;           /*  颜色 */
+  background-color: #fff;/*  背景 */
+
+  width: 100%; /* ? */
+  padding: 0; /* ? */
+  height: 100%; /* ? */
 }
 
+/**
+*   1. 清除默认边距
+*   2. 统一样式
+*/
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: 0;
-
-  color: inherit;
-  font-family: inherit;
+  margin-top: 0;        /* 1 */
+  margin-bottom: 0;     /* 1 */
+  font-weight: 500;     /* 2 */
+  line-height: 1.1;     /* 2 */
+  color: inherit;       /* 2 */
+  font-family: inherit; /* 2 */
 }
 
 dd {
   margin-left: 0;
 }
 
+figure,blockquote {
+  margin: 0;
+}
 menu {
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+input, textarea {
+  padding: 0;
+}
+
+legend {
+  padding-left: 0;
 }
 
 p, pre, dl {
@@ -34,43 +71,85 @@ p, pre, dl {
   margin-bottom: 0;
 }
 
-td, th, fieldset, input, textarea {
-  padding: 0;
-}
-/*
-
 td, th {
   padding: 0;
-  text-align: left;  !* 统一默认左对齐 *!
-}
-*/
-
-
-legend {
-  padding-left: 0;
+  text-align: left;  /* 统一默认左对齐 ? */
 }
 
-ul, ol {
-  padding-left: 0;
-  margin-top: 0;
-  margin-bottom: 0;
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 
-article, aside, footer, header, nav, section,
-figcaption, figure, main, menu, details {
+
+/**
+   1. IE 9 以下不识别HTML 5 元素 [不识别元素默认为inline]
+   2. IE 10/11 details 定义为 block 的元素
+ */
+article, aside, footer, header, nav, section, figcaption, figure, main, menu, details { /* ? */
   display: block;
 }
 
-summary {
+/*
+ *  修正 summary 元素 display 为 list-item
+ */
+summary { /* ? */
   display: list-item;
 }
+
+audio, video ,canvas, output /* ? */, progress{
+  display: inline-block;
+}
+
+legend
 
 /**
  * 1. 修正 IE template 元素不可见.       [ template 模板标签, 应用于HTML 模板页面开发, 通过JS渲染，不显示于页面 ]
  * 2. 修正 IE 10 以下 [hidden] 为不可见
  */
-template /* 1 */,[hidden] /* 2 */ {
+template /* 1 */,[hidden] /* 2 */ { /* ? */
   display: none;
+}
+
+/* 文本语义元素
+  ===========================================================
+
+*/
+a {
+  text-decoration: none; /* 移除默认下滑线 ? 真的需要移除吗? */
+}
+
+a:active, a:hover { /*? 没有添加当悬浮的时候：text-decoration: none*/
+  outline-width: 0
+}
+
+/**
+ * 1. 修正字体显示与缩放。 [ 系统字体优先 ]
+ * 2. 确保所有浏览器字体显示正常 [ 通过`em`等比 ]
+ * 3. 统一样式显示
+ */
+code, kbd, samp, pre {
+  font-family: Consolas /* window */ , "Liberation Mono" /*window */,  Menlo /* mac*/ , Monaco/* mac */, Courier New /* win7 */, monospace;
+  font-size: 1em; /* 2 ?*/
+}
+
+/* ? */
+kbd {
+  padding: 0;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+
+/**
+ * 不使用[%、em、rem ] 重置small 原因如下：
+ *   1. 当html/body设置字号小于15px时, `small` 取值[80%/.8em/.8rem] 导致 chrome 与 其他浏览器字号显示不一致。
+ *                    chrome 最小字体为12px.
+ *   2.中文字号小于12 不易阅读
+ */
+small {
+  font-size: 12px;
 }
 
 sub, sup {
@@ -88,74 +167,9 @@ sup {
   top: -.5em;
 }
 
-
-/**
-*  取消默认下划线 [ ins 表示修正，一般配合 del 使用. 请自定义修正样式 ]
-*/
-ins {
-  text-decoration: none;
+img {
+  /*max-width: 100%; */ /* ? 支持响应式 [自适应]*/
 }
-
-
-/**
- * Android 4.3 以下添加正确的样式.    [ 默认斜体 ]
- */
-dfn {
-  font-style: italic;
-}
-
-/**
- * 防止 Safari 6 重复规则 `bolder`
- */
-b, strong {
-  font-weight: inherit;
-}
-
-/**
- * 添加正确的字体 Chrome, Edge, and Safari.
- */
-b, strong, dt/* dt 表示列表项,真实语义为粗体 */ {
-  font-weight: 600;
-}
-
-/**
- * 1. 移除 Firefox 39 以下底部边框
- * 2. 移除下划线修饰 [ 请自定义修饰符，或 语义样式 ]
- *
- * info: https://bugs.chromium.org/p/chromium/issues/detail?id=480213
- */
-abbr {
-  border-bottom: none; /* 1 */
-  text-decoration: none; /* 2 */
-}
-
-/**
- * 1. 修正字体显示与缩放。 [ 系统字体优先 ]
- * 2. 确保所有浏览器字体显示正常 [ 通过`em`等比 ]
- * 3. 统一样式显示
- */
-code, kbd, samp, pre {
-  font-family: Consolas /* window */ , "Liberation Mono" /*window */,  Menlo /* mac*/ , Monaco/* mac */, Courier New /* win7 */, monospace;
-  font-size: 1em; /* 2 */
-}
-
-kbd {
-  padding: 0;
-  font-size: 100%;
-  font-weight: bold;
-}
-
-/**
- * 不使用[%、em、rem ] 重置small 原因如下：
- *   1. 当html/body设置字号小于15px时, `small` 取值[80%/.8em/.8rem] 导致 chrome 与 其他浏览器字号显示不一致。
- *                    chrome 最小字体为12px.
- *   2.中文字号小于12 不易阅读
- */
-small {
-  font-size: 12px;
-}
-
-
 
 /**
 * 取消默认嵌套引用
@@ -167,10 +181,20 @@ blockquote, q {
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
+  content: none;
+}
+
+del {
+  text-decoration: line-through
 }
 
 
-
+/**
+ * 添加正确的字体 Chrome, Edge, and Safari.
+ */
+b, strong, dt/* dt 表示列表项,真实语义为粗体 */ {
+  font-weight: 600; /* ? */
+}
 
 /**
 * 合并单元格边框，重置内边距, 默认透明背景
@@ -178,7 +202,7 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  background-color: transparent;
+  background-color: transparent; /* ? */
 }
 
 /**
@@ -191,68 +215,75 @@ ul, ol {
   margin-top: 0;    /* 2 */
   margin-bottom: 0; /* 2 */
 }
+/* checkbox/radio 时  box-sizing: border-box*/
+[type="checkbox"], [type="radio"] {
+  box-sizing: border-box;
+  padding: 0
+}
+
 
 /**
  * 1. 修正浏览器中字体不继承问题  [ 说明: `input`,`textarea` 默认是不继承字体颜色, 请在实际项目中定义 ]
- * 2. 移除 Firefox 和 Safari 默认外边距.
+ * 2. 移除 Firefox 和 Safari 默认外边距. [ ? ]
  */
-button, input, optgroup, select, textarea {
+button, input, optgroup, select, textarea { /* ? */
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 , [ IE11设置 input{line-height: inherit;} 无效, 这里统一正确的行高 ] */
+  /*line-height: inherit; ? */
   margin: 0; /* 2 */
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* other */
-button {
-  width: auto;   /* 文本保持居中对齐 */
-  overflow: visible;
-}
-
-input[type="file"] {
-   display: block;  /* 清除左边距 */
+/* ? */
+input,select {
+  vertical-align: middle;
 }
 
 
 /**
-* label 元素赋予手型光标,inline-block
+*  取消默认下划线 [ ins 表示修正，一般配合 del 使用. 请自定义修正样式 ]
 */
-label {
-  cursor: pointer;
-  display: inline-block;
+ins {
+  text-decoration: none;
 }
 
+/*
+
+  1. a: 悬浮的时候是否显示下划线 , 是否给他一个默认颜色
+  2. 特
+
+*/
+
+
+/* 默认 placeholder 字体颜色 */
+::-webkit-input-placeholder {
+  color: #6a737d
+}
+
+::-moz-placeholder {
+  color: #6a737d
+}
+
+:-ms-input-placeholder {
+  color: #6a737d
+}
+
+::placeholder {
+  color: #6a737d
+}
+
+/* delete */
+pre {
+  color: inherit;
+  background: transparent;
+}
 
 /**
- * 定义一致的边框、外边距和内边距
+ * 1. 修正 Safari, Chrome 的 appearance 属性被设置为 searchfield
+ * 2. 修正 Safari 「outline」样式
  */
-fieldset {
-  min-width: 0;
-  padding: 0;
-  margin: 0;
-  border: 0;
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }

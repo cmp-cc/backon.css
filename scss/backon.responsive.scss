@@ -1,3 +1,17 @@
 html {
+  /*  防止在 Window Phone(IE) 和 IOS 横屏字号变化 */
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
 
+body {
+  -webkit-overflow-scrolling: touch; /* 修正 IOS 系统无法触摸滑动 [IOS 5.0+ browser] */
+}
+
+a {
+  background-color: transparent;  /* 移除 IE 10 点击链接时灰色背景 [统一默认透明] */
+  /* 修正 IOS 8+ 和 Safari 8+ 显示为下划线  [默认显示为空白间隔下划线]
+     info: https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-decoration-skip
+  */
+  -webkit-text-decoration-skip: objects;
 }

@@ -1,10 +1,479 @@
+
 /*要去掉按下的阴影盒子可以下面的属性：  ios 阴影*/
 input, textarea, a {
   -webkit-tap-highlight-color: transparent;
 }
 
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none
+}
 
-.stop-scrolling {
-  height: 100%;
+ol ol, ul ol {
+  list-style-type: lower-roman
+}
+
+ul ul ol, ul ol ol, ol ul ol, ol ol ol {
+  list-style-type: lower-alpha
+}
+
+
+input, select, textarea, button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit
+}
+
+
+[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
+  height: auto
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px
+}
+
+[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none
+}
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit
+}
+
+
+
+button, input, optgroup, select, textarea {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0
+}
+
+
+
+template, [hidden] {
+  display: none
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects
+}
+
+a:active, a:hover {
+  outline-width: 0
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted
+}
+
+b, strong {
+  font-weight: inherit
+}
+
+b, strong {
+  font-weight: bolder
+}
+
+dfn {
+  font-style: italic
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0
+}
+
+mark {
+  background-color: #ff0;
+  color: #000
+}
+
+small {
+  font-size: 80%
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline
+}
+
+sub {
+  bottom: -0.25em
+}
+
+sup {
+  top: -0.5em
+}
+
+img {
+  border-style: none
+}
+
+svg:not(:root) {
   overflow: hidden
+}
+
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  font-size: 1em
+}
+
+figure {
+  margin: 1em 40px
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible
+}
+
+button, input, select, textarea {
+  font: inherit;
+  margin: 0
+}
+
+optgroup {
+  font-weight: bold
+}
+
+button, input {
+  overflow: visible
+}
+
+button, select {
+  text-transform: none
+}
+
+button, html [type="button"], [type="reset"], [type="submit"] {
+  -webkit-appearance: button
+}
+
+button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0
+}
+
+button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal
+}
+
+
+input[type="radio"],input[type="checkbox"] {
+  vertical-align: middle
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+
+
+/**
+ * 1. 统一 box-sizing 为 content-box [Firefox 差异]
+ * 2. 统一 默认样式, 解决不同浏览器之间的样式差异
+ *    2.1、 修正越界问题 [ 除Edge/IE 为`hidden`, 其他浏览器均为`visible`, `visible`属性会导致越界 ]
+ *    2.2、 修正不同浏览器之间的样式差异
+ * 3. 默认 清除浮动
+ */
+hr {
+  -webkit-box-sizing: content-box; /* 1 */
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: hidden;  /* 2.1 */
+  background: transparent; /* 2.2 */
+  border: 0;               /* 2.2 */
+  border-bottom: 1px solid #ccc; /* 2.2 */
+  /*text-align: center;* / /*  http://stackoverflow.com/questions/34999692/html-css-hr-alignment-in-ie  [ie11 ? test, not find ]*/
+}
+
+hr::after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+a {
+  color: #06c; /*  统一字体颜色。 [ 统一为IE默认字色, 也是最为合适的字色] */
+}
+
+/**
+ * 1. 移除(点击、悬浮)状态时的聚焦框
+ * 2. 移除悬浮状态是下划线
+ */
+a:active {
+  outline-width: 0;
+  background-color: transparent; /* delete IE10 点击出发后灰色背景 */
+}
+a:hover {
+  outline-width: 0;
+  text-decoration: none;  /* [text-decoration: underline; ] */
+}
+
+
+
+/**
+* [实际开发中, 通常会使用 `a` 标签 模拟 `button` 避免显示聚焦样式]
+*/
+a:not([href]):focus, a:not([href]):hover {
+  color: inherit;
+  outline-width: 0;
+}
+
+
+/**
+*  取消默认下划线 [ ins 表示修正，一般配合 del 使用. 请自定义修正样式 ]
+*/
+ins {
+  text-decoration: none;
+}
+
+
+/**
+ * Android 4.3 以下添加正确的样式.    [ 默认斜体 ]
+ */
+dfn {
+  font-style: italic;
+}
+
+
+/**
+ * 1. 移除 Firefox 39 以下底部边框
+ * 2. 移除下划线修饰 [ 请自定义修饰符，或 语义样式 ]
+ *
+ * info: https://bugs.chromium.org/p/chromium/issues/detail?id=480213
+ */
+abbr {
+  border-bottom: none; /* 1 */
+  text-decoration: none; /* 2 */
+}
+
+/**
+ * 防止 Safari 6 重复规则 `bolder`
+ */
+b, strong {
+  font-weight: inherit;
+}
+
+/**
+ * 添加正确的字体 Chrome, Edge, and Safari.
+ */
+b, strong, dt/* dt 表示列表项,真实语义为粗体 */ {
+  font-weight: 600;
+}
+
+/*
+strong, th, b {
+  font-weight: bold;
+}
+*/
+
+code {
+  color: #bd4147;
+  background-color: #eff0f1;
+}
+/**
+ * 1. ie 8 max-height　异常
+ *      info: http://stackoverflow.com/questions/7707/ie8-overflowauto-with-max-height/881597#881597
+ */
+pre {
+  overflow: auto;   /* 1 or [ max-height: none\9 ] */
+  color: inherit;
+  background-color: transparent;
+}
+
+
+/**
+ * 修正 IE9 以下显示正确的背景和字体颜色   [ 这里统一所有浏览器为荧光色 (可选)]
+ */
+mark {
+  background-color: #d6e7ff;  /* 浅度荧光色 */
+  color: #000;
+}
+
+
+
+/**
+ * 修正 IOS 4-7 display 样式. [ 没有controls属性时,元素显示出来 ]
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * 1. 移除 IE10 以下默认边框
+ * 2. 支持响应式 [自适应]
+ * 3. 修正 IE8 图片消失bug [设置max-width:100%, ie8 下图片消失了？]
+ *        演示： http://www.456bereastreet.com/lab/img-max-width/
+ * 4. 去除图片底部空隙 [ IE8 以下出现，现代浏览器都已修正, next update delete, backon.css support ie8+]
+ */
+img {
+  border-style: none; /* 1 */
+  max-width: 100%; /* 2 */
+  width: auto\9;   /* 3 * \9 是 Css hack， 它表示只作用于 Internet Explorer 7 - 9 */
+  vertical-align: bottom; /* 4 */
+}
+
+/**
+* label 元素赋予手型光标,inline-block
+*/
+label {
+  cursor: pointer;
+  display: inline-block;
+}
+
+/*
+* radio/checkbox 不可选时，显示非法光标    (犹豫中 ....)
+*/
+input[type="radio"]:disabled,
+input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+}
+
+/**
+* 为可拖动元素添加拖动光标
+*/
+[draggable="true"] {
+  cursor: move;
+}
+
+/**
+ * 移除 Firefox 3+ 的内外边距
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * 恢复聚焦样式规则
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+
+
+
+
+/**
+ * 1. 修正 Edge,IE,Firefox 文本包裹问题.
+ * 2. 修正 `legend` 元素 颜色继承,行高继承问题 [IE 6-9 中颜色不继承]
+ * 3. 清除默认填充
+ */
+legend {
+  display: table; /* 1 */
+  max-width: 100%; /* 1 * or width: 100%; */
+  white-space: normal; /* 1 [中文字体不换行问题] */
+  color: inherit; /* 2 */
+  line-height: inherit; /* 2 */
+  padding: 0; /* 3 or padding-left: 0; */
+}
+
+/**
+ * 1. 移除 IE 默认垂直滚动条 [ IE 6-11 ]
+ * 2. 禁止水平拖动 [ 防止破坏布局 ]
+ */
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+/**
+ * 修正 Chrome 「cursor」 样式 [Correct the cursor style of increment and decrement buttons in Chrome]
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. 修正 Safari, Chrome 的 appearance 属性被设置为 searchfield
+ * 2. 修正 Safari 「outline」样式
+ */
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * 1. 移除 macOS 中 Chrome 和 Safari 搜索框内边距
+ * 2. 隐藏 macOS 中 Chrome 和 Safari 清除按钮
+ */
+[type="search"]::-webkit-search-cancel-button, /* 1 */
+[type="search"]::-webkit-search-decoration  /* 2 */ {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. 修正在IOS 和 Safari 无法点击问题  [ 不可点击的样式类型 ]
+ * 2. 修正 Safari 字体 `inherit`
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
