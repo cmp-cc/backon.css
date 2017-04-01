@@ -3,8 +3,9 @@
   "version": "1.5.7",
   "description": "A moderm CSS reset",
   "scripts": {
-    "start":"npm run build",
-    "build":"cd build && node ./nano-css.js"
+    "start": "npm run build",
+    "build": "cd build && node ./sass-compile.js && cd ../ && postcss --config build/postcss-config.js --replace dist/*.css",
+    "sass": "node-sass --output-style expanded --source-map true --precision 6 scss/backon.scss dist/css/backon.min.css"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,9 @@
   },
   "homepage": "https://github.com/cmp-cc/backon#readme",
   "devDependencies": {
-    "cssnano": "^3.10.0"
+    "autoprefixer": "^6.7.2",
+    "cssnano": "^3.10.0",
+    "node-sass": "^4.5.0",
+    "postcss-cli": "^2.6.0"
   }
 }
