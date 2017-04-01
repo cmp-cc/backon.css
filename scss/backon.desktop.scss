@@ -1,3 +1,5 @@
+@import "commons";
+
 html {
   overflow-y: scroll; /* 修正 浏览器内容高度 小于 页面高度时, 不显示滚动条。[导致页面切换时, 显示异常] */
   -ms-overflow-style: scrollbar; /* 修正 IE 10~11 滚动条悬浮问题  */
@@ -68,6 +70,12 @@ button, select { /* 1 */
   text-transform: none;
 }
 
+/* 显示光标 */
+label {
+  cursor: pointer;
+}
+
+
 /*
   统一点击类型光标
 */
@@ -109,3 +117,14 @@ select:disabled option:checked, option:disabled:checked {
   color: #d2d2d2;
 }
 
+
+/**
+ * 移除 Firefox 3+ 的内外边距
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}

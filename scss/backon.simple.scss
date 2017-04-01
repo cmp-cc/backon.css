@@ -109,17 +109,11 @@ a:hover, a:active {
   outline: none
 }
 
-ul, ol {
-  margin-left: 2em
-}
 
 ol {
   list-style-type: decimal
 }
 
-small {
-  font-size: 85%
-}
 
 strong, th, b {
   font-weight: bold
@@ -127,20 +121,6 @@ strong, th, b {
 
 td {
   vertical-align: top
-}
-
-sub, sup {
-  font-size: 75%;
-  line-height: 1;
-  position: relative
-}
-
-sup {
-  top: -0.5em
-}
-
-sub {
-  bottom: -0.25em
 }
 
 p {
@@ -154,14 +134,6 @@ pre {
 
 pre b, pre strong {
   font-weight: bold
-}
-
-input[type="radio"] {
-  vertical-align: middle
-}
-
-input[type="checkbox"] {
-  vertical-align: middle
 }
 
 label, input[type="button"], input[type="submit"], .button, a.button:link, a.button:visited, input[type="image"], button {
@@ -183,13 +155,4 @@ h1, h2, h3, h4, h5, h6 {
 
 em {
   color: #0C0D0E
-}
-
-a, a:visited {
-  text-decoration: none;
-  color: #07C
-}
-
-a, a > em {
-  color: #07C
 }

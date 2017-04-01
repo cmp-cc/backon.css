@@ -102,7 +102,7 @@ audio, video ,canvas, output /* ? */, progress{
   display: inline-block;
 }
 
-legend
+
 
 /**
  * 1. 修正 IE template 元素不可见.       [ template 模板标签, 应用于HTML 模板页面开发, 通过JS渲染，不显示于页面 ]
@@ -221,6 +221,9 @@ ul, ol {
   padding: 0
 }
 
+label {
+  display: inline-block;
+}
 
 /**
  * 1. 修正浏览器中字体不继承问题  [ 说明: `input`,`textarea` 默认是不继承字体颜色, 请在实际项目中定义 ]
@@ -234,8 +237,6 @@ button, input, optgroup, select, textarea { /* ? */
   margin: 0; /* 2 */
 }
 
-
-/* ? */
 input,select {
   vertical-align: middle;
 }
@@ -258,19 +259,37 @@ ins {
 
 /* 默认 placeholder 字体颜色 */
 ::-webkit-input-placeholder {
-  color: #6a737d
+  color: inherit;
+  opacity: 0.54
 }
 
 ::-moz-placeholder {
-  color: #6a737d
+  color: inherit;
+  opacity: 0.54
 }
 
 :-ms-input-placeholder {
-  color: #6a737d
+  color: inherit;
+  opacity: 0.54
 }
 
 ::placeholder {
-  color: #6a737d
+  color: inherit;
+  opacity: 0.54
+}
+
+/**
+* [实际开发中, 通常会使用 `a` 标签 模拟 `button` 避免显示聚焦样式]
+*/
+a:not([href]):focus, a:not([href]):hover {
+  color: inherit;
+  outline-width: 0;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible
 }
 
 /* delete */
@@ -286,4 +305,13 @@ pre {
 [type="search"] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
+}
+
+/**
+ * 1. 移除 macOS 中 Chrome 和 Safari 搜索框内边距
+ * 2. 隐藏 macOS 中 Chrome 和 Safari 清除按钮
+ */
+[type="search"]::-webkit-search-cancel-button, /* 1 */
+[type="search"]::-webkit-search-decoration  /* 2 */ {
+  -webkit-appearance: none;
 }
